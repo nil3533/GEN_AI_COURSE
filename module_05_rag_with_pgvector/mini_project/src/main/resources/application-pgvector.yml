@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: ${RAG_DB_URL:jdbc:postgresql://localhost:5433/ragdb}
+    username: ${RAG_DB_USERNAME:rag}
+    password: ${RAG_DB_PASSWORD:rag}
+
+app:
+  rag:
+    vector-store: pgvector

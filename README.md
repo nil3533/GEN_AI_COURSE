@@ -59,31 +59,41 @@ Prerequisites:
 Run the latest completed module:
 
 ```powershell
-cd F:\GEN_AI_COURSE\module_04_structured_output_tools\mini_project
+cd F:\GEN_AI_COURSE\module_05_rag_with_pgvector\mini_project
 mvn test
-
-$env:GROQ_API_KEY="your_key_here"
-mvn spring-boot:run -Dspring-boot.run.profiles=groq
+mvn spring-boot:run
 ```
 
-Try the Module 4 assistant:
+Try the Module 5 RAG API:
 
 ```powershell
-curl.exe -X POST http://localhost:8082/api/assistant `
+curl.exe -X POST http://localhost:8083/api/documents/ingest `
   -H "Content-Type: application/json" `
-  -d "{\"customerId\":\"cust-100\",\"message\":\"What is the status of order ORD-1001?\",\"confirmed\":false}"
+  -d "{\"documentId\":\"spring-ai-notes\",\"title\":\"Spring AI Notes\",\"source\":\"manual\",\"content\":\"Spring AI ChatClient is the fluent API for calling chat models. RAG retrieves relevant context before asking the model to answer.\"}"
+```
+
+```powershell
+curl.exe -X POST http://localhost:8083/api/rag/ask `
+  -H "Content-Type: application/json" `
+  -d "{\"question\":\"What is ChatClient used for?\",\"topK\":3}"
 ```
 
 Expected shape:
 
 ```json
 {
-  "intent": "ORDER_STATUS",
-  "answer": "Order ORD-1001 has shipped and is on the way.",
-  "actionRequired": false,
-  "toolsCalled": [],
-  "safetyNotes": [],
-  "confidence": 0.9
+  "question": "What is ChatClient used for?",
+  "answer": "Spring AI ChatClient is the fluent API for calling chat models.",
+  "sources": [
+    {
+      "documentId": "spring-ai-notes",
+      "title": "Spring AI Notes",
+      "source": "manual",
+      "chunkIndex": 0,
+      "chunkText": "Spring AI ChatClient is the fluent API...",
+      "relevanceScore": 0.84
+    }
+  ]
 }
 ```
 
@@ -95,8 +105,8 @@ Expected shape:
 | 02 | Spring AI Core | Multi-provider chat | Done |
 | 03 | Streaming Chat | SSE chat API | Done |
 | 04 | Tool Calling | Order assistant | Done |
-| 05 | RAG + pgvector | Chat with docs | Next |
-| 06 | Advisors and Memory | Cross-cutting AI concerns | Planned |
+| 05 | RAG + pgvector | Chat with docs | Done |
+| 06 | Advisors and Memory | Cross-cutting AI concerns | Next |
 | 07 | MCP and Agents | Agent tools and MCP | Planned |
 | 08 | Workflows and Streaming | Stateful AI workflows | Planned |
 | 09 | Observability and Resilience | Production AI patterns | Planned |
@@ -113,6 +123,7 @@ Expected shape:
 | [Module 2 mini-project](module_02_spring_ai_core/mini_project/README.md) | Spring AI `ChatClient`, Groq/Ollama provider switching | `mvn test` |
 | [Module 3 mini-project](module_03_chatclient_deep_dive/mini_project/README.md) | Streaming and non-streaming chat API with SSE | `mvn test` |
 | [Module 4 mini-project](module_04_structured_output_tools/mini_project/README.md) | Structured output, `@Tool`, tool traces, cancellation safety | `mvn test` |
+| [Module 5 mini-project](module_05_rag_with_pgvector/mini_project/README.md) | RAG ingestion, pgvector search, grounded answers with citations | `mvn test` |
 
 ## Screenshots and Infographics
 
@@ -124,6 +135,7 @@ Expected shape:
 | Module 2 learning flow | [module_02_spring_ai_core/assets/module-learning-flow.svg](module_02_spring_ai_core/assets/module-learning-flow.svg) |
 | Module 3 learning flow | [module_03_chatclient_deep_dive/assets/module-learning-flow.svg](module_03_chatclient_deep_dive/assets/module-learning-flow.svg) |
 | Module 4 learning flow | [module_04_structured_output_tools/assets/module-learning-flow.svg](module_04_structured_output_tools/assets/module-learning-flow.svg) |
+| Module 5 learning flow | [module_05_rag_with_pgvector/assets/module-learning-flow.svg](module_05_rag_with_pgvector/assets/module-learning-flow.svg) |
 
 ## Demo Commands
 
@@ -132,7 +144,7 @@ Module 2, multi-provider chat:
 ```powershell
 cd F:\GEN_AI_COURSE\module_02_spring_ai_core\mini_project
 mvn test
-mvn spring-boot:run -Dspring-boot.run.profiles=ollama
+mvn spring-boot:run "-Dspring-boot.run.profiles=ollama"
 ```
 
 Module 3, streaming chat:
@@ -140,7 +152,7 @@ Module 3, streaming chat:
 ```powershell
 cd F:\GEN_AI_COURSE\module_03_chatclient_deep_dive\mini_project
 mvn test
-mvn spring-boot:run -Dspring-boot.run.profiles=ollama
+mvn spring-boot:run "-Dspring-boot.run.profiles=ollama"
 ```
 
 Module 4, tool-calling assistant:
@@ -149,7 +161,16 @@ Module 4, tool-calling assistant:
 cd F:\GEN_AI_COURSE\module_04_structured_output_tools\mini_project
 mvn test
 $env:GROQ_API_KEY="your_key_here"
-mvn spring-boot:run -Dspring-boot.run.profiles=groq
+mvn spring-boot:run "-Dspring-boot.run.profiles=groq"
+```
+
+Module 5, RAG with pgvector:
+
+```powershell
+cd F:\GEN_AI_COURSE\module_05_rag_with_pgvector\mini_project
+mvn test
+docker compose up -d
+mvn spring-boot:run "-Dspring-boot.run.profiles=pgvector"
 ```
 
 ## Learning Path

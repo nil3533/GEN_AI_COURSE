@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560" role="img" aria-labelledby="title desc">
+  <title id="title">Module 5 RAG learning flow</title>
+  <desc id="desc">Module 5 shows document ingestion, chunking, embeddings, pgvector storage, retrieval, answer generation, citations, and evaluation.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 34px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .sub { font: 500 16px Segoe UI, Arial, sans-serif; fill: #475569; }
+      .box { fill: #ffffff; stroke: #2563eb; stroke-width: 2; rx: 10; }
+      .store { fill: #ecfeff; stroke: #0891b2; stroke-width: 2; rx: 10; }
+      .answer { fill: #f0fdf4; stroke: #16a34a; stroke-width: 2; rx: 10; }
+      .eval { fill: #fff7ed; stroke: #f97316; stroke-width: 2; rx: 10; }
+      .h { font: 700 17px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .t { font: 500 12px Segoe UI, Arial, sans-serif; fill: #334155; }
+      .arrow { stroke: #64748b; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1180" height="560"/>
+  <text x="56" y="70" class="title">Module 5: RAG with pgvector</text>
+  <text x="58" y="102" class="sub">Retrieve trusted context from PostgreSQL before asking the model to answer.</text>
+
+  <rect x="54" y="150" width="176" height="86" class="box"/>
+  <text x="78" y="184" class="h">Documents</text>
+  <text x="78" y="210" class="t">Markdown, text, PDFs</text>
+  <text x="78" y="228" class="t">metadata and source ids</text>
+
+  <path d="M232 193 H282" class="arrow"/>
+
+  <rect x="292" y="150" width="176" height="86" class="box"/>
+  <text x="316" y="184" class="h">Chunking</text>
+  <text x="316" y="210" class="t">size and overlap</text>
+  <text x="316" y="228" class="t">document boundaries</text>
+
+  <path d="M470 193 H520" class="arrow"/>
+
+  <rect x="530" y="150" width="176" height="86" class="box"/>
+  <text x="554" y="184" class="h">Embeddings</text>
+  <text x="554" y="210" class="t">nomic-embed-text</text>
+  <text x="554" y="228" class="t">vector representation</text>
+
+  <path d="M708 193 H758" class="arrow"/>
+
+  <rect x="768" y="150" width="176" height="86" class="store"/>
+  <text x="792" y="184" class="h">pgvector</text>
+  <text x="792" y="210" class="t">Postgres table</text>
+  <text x="792" y="228" class="t">cosine search</text>
+
+  <path d="M856 238 V300" class="arrow"/>
+
+  <rect x="768" y="312" width="176" height="86" class="store"/>
+  <text x="792" y="346" class="h">Retrieval</text>
+  <text x="792" y="372" class="t">question embedding</text>
+  <text x="792" y="390" class="t">top-k chunks</text>
+
+  <path d="M766 355 H716" class="arrow"/>
+
+  <rect x="530" y="312" width="176" height="86" class="answer"/>
+  <text x="554" y="346" class="h">Answer</text>
+  <text x="554" y="372" class="t">grounded prompt</text>
+  <text x="554" y="390" class="t">no unsupported claims</text>
+
+  <path d="M528 355 H478" class="arrow"/>
+
+  <rect x="292" y="312" width="176" height="86" class="answer"/>
+  <text x="316" y="346" class="h">Citations</text>
+  <text x="316" y="372" class="t">document id</text>
+  <text x="316" y="390" class="t">chunk and score</text>
+
+  <path d="M290 355 H240" class="arrow"/>
+
+  <rect x="54" y="312" width="176" height="86" class="eval"/>
+  <text x="78" y="346" class="h">Evaluation</text>
+  <text x="78" y="372" class="t">recall@k</text>
+  <text x="78" y="390" class="t">retrieval sanity checks</text>
+
+  <rect x="984" y="218" width="142" height="112" class="answer"/>
+  <text x="1010" y="258" class="h">Mini</text>
+  <text x="1004" y="282" class="h">Project</text>
+  <text x="1004" y="314" class="t">Chat with docs</text>
+  <path d="M946 193 C984 200 992 224 992 246" class="arrow"/>
+  <path d="M946 355 C984 348 992 324 992 302" class="arrow"/>
+</svg>

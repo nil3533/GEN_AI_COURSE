@@ -1,71 +1,134 @@
-# Module 5 — RAG with pgvector
+# Module 5 - RAG with pgvector
 
-> **Weeks 8–9 · ~18 hours**
+> Weeks 8-9 - about 18 hours
 
-> **The single most important module in this course.** RAG is *the* dominant production architecture for enterprise LLM apps. If you nail nothing else, nail this. And because you already know PostgreSQL deeply, pgvector lets you reuse that knowledge directly.
+## What You Will Walk Away With
 
----
+![Module 5 learning flow](assets/module-learning-flow.svg)
 
-## What you'll walk away with
+You will build the most common production GenAI pattern: Retrieval-Augmented Generation. Instead of asking a model to guess from memory, you will retrieve relevant document chunks from PostgreSQL/pgvector and pass those chunks into the prompt with citations.
 
-The ability to design, build, and tune a production-grade RAG pipeline end-to-end in Spring Boot: document ingestion → chunking → embeddings → pgvector storage → retrieval → reranking → answer generation with citations. You'll also know advanced techniques (hybrid search, multi-query retrieval, contextual compression) and how to evaluate whether your RAG is actually working.
+By the end of this module, you should be comfortable with:
 
-By the end you'll be able to convincingly answer: *"Design a RAG system over 10 million enterprise documents using Spring Boot."*
+- RAG architecture: ingest, chunk, embed, store, retrieve, answer
+- pgvector storage and cosine similarity
+- metadata and citation design
+- chunk-size and overlap tradeoffs
+- local embeddings through Ollama or deterministic test embeddings
+- grounded answer generation
+- basic retrieval evaluation
+- when to add hybrid search and reranking
 
----
+## Learning Hours Breakdown
 
-## Files (outline)
+| Activity | Hours |
+|---|---:|
+| Reading concept files | 6 |
+| PostgreSQL/pgvector setup | 2 |
+| Ingestion pipeline | 3 |
+| Retrieval and answer generation | 3 |
+| Evaluation endpoint | 2 |
+| Tests and notes | 2 |
+| Total | 18 |
 
-1. `01_what_is_rag_and_why_it_solves_hallucination.md` — The problem RAG solves, with architecture diagrams
-2. `02_the_spring_ai_rag_pipeline.md` — `DocumentReader → TextSplitter → EmbeddingModel → VectorStore → ChatClient` — the full pipeline
-3. `03_pgvector_setup_and_internals.md` — Postgres + pgvector extension; HNSW vs IVFFlat indexes; tuning `m`, `ef_construction`, `ef_search`; cosine vs L2 distance
-4. `04_document_loading_pdfs_html_markdown.md` — `TikaDocumentReader`, `MarkdownDocumentReader`, custom readers; metadata handling
-5. `05_chunking_strategies.md` — `TokenTextSplitter`, semantic chunking, document-aware chunking for code/contracts/chat logs
-6. `06_embedding_model_selection.md` — OpenAI ada-3, BGE, Voyage, Ollama's nomic-embed-text; dimensions, cost, multilingual support; **how to pick**
-7. `07_pgvector_in_spring_ai_application_yml.md` — All the properties; auto-schema-init; manual schema for production
-8. `08_storing_and_searching_documents.md` — `VectorStore.add(...)`, `similaritySearch(SearchRequest)`, filters via metadata
-9. `09_questionansweradvisor_native_rag.md` — Spring AI's built-in RAG Advisor; how it composes retrieval with the prompt
-10. `10_advanced_query_rewriting_hyde.md` — Rewriting user queries before embedding; Hypothetical Document Embeddings
-11. `11_hybrid_search_vector_plus_keyword.md` — Combining pgvector cosine search with Postgres full-text search; reciprocal rank fusion
-12. `12_reranking_for_quality.md` — Two-stage retrieval with Cohere reranker or BGE-reranker; the single biggest quality win
-13. `13_multi_source_retrieval.md` — RAG across multiple `VectorStore`s; result fusion
-14. `14_citations_and_grounding.md` — Returning source-aware answers with `[doc_id]` markers; preventing ungrounded claims
-15. `15_evaluating_rag.md` — Retrieval metrics (recall@k, MRR); generation metrics (faithfulness, relevance); building an eval harness in Java
+## Files in This Module
 
-## Mini-project
+Read in order:
 
-**"Chat with Spring Boot docs."** Build a Spring Boot service that:
-- Ingests a directory of PDFs/Markdown (suggestion: download Spring Boot reference docs as Markdown — content you'll judge quality on)
-- Uses `MarkdownDocumentReader` + `TokenTextSplitter` for chunking
-- Embeds via Ollama's `nomic-embed-text` (free, local)
-- Stores in pgvector via Spring AI auto-config
-- Exposes `POST /api/rag/ask` returning an `AnswerWithCitations` record: `{answer, sources[]}` where sources include `documentId`, `chunkText`, `relevanceScore`
-- Uses `QuestionAnswerAdvisor` for the basic version, then upgrades to manual two-stage retrieval with a reranker
-- Includes a `/api/rag/eval` endpoint that runs 10 test questions and reports retrieval recall
+1. `01_what_is_rag_and_why_it_solves_hallucination.md` - why retrieval grounds model answers
+2. `02_the_spring_ai_rag_pipeline.md` - reader, splitter, embeddings, vector store, chat client
+3. `03_pgvector_setup_and_internals.md` - extension, vector columns, distance, indexes
+4. `04_document_loading_pdfs_html_markdown.md` - Markdown, PDFs, metadata, source ids
+5. `05_chunking_strategies.md` - chunk size, overlap, document-aware chunking
+6. `06_embedding_model_selection.md` - local and hosted embedding choices
+7. `07_pgvector_in_spring_ai_application_yml.md` - profile-based pgvector configuration
+8. `08_storing_and_searching_documents.md` - add chunks and similarity search
+9. `09_questionansweradvisor_native_rag.md` - when to use Spring AI advisors
+10. `10_advanced_query_rewriting_hyde.md` - query rewriting and HyDE
+11. `11_hybrid_search_vector_plus_keyword.md` - vector plus keyword search
+12. `12_reranking_for_quality.md` - second-stage ranking
+13. `13_multi_source_retrieval.md` - multiple stores and result fusion
+14. `14_citations_and_grounding.md` - source-aware answers
+15. `15_evaluating_rag.md` - recall, MRR, faithfulness, eval sets
+16. `interview_prep.md` - design and debugging questions
 
-This is a portfolio-grade project. Polish the README with screenshots, architecture diagram, and the eval report.
+## Mini-Project: Chat with Docs using Spring AI and pgvector
 
-**Push to:** `sani-genai-journey/m05-pgvector-rag/`
+Build a Spring Boot service that can ingest text/Markdown documents, chunk them, embed each chunk, store vectors in pgvector, retrieve relevant chunks, and answer with citations.
 
-## Docker Compose
+Required behavior:
 
-This module's project needs Postgres+pgvector. Use the reusable `docker-compose.yml` from `02_ENVIRONMENT_SETUP.md`.
+- `POST /api/documents/ingest` stores a document as chunks
+- `GET /api/documents` lists ingested documents
+- `DELETE /api/documents` clears chunks
+- `POST /api/rag/ask` returns `AnswerWithCitations`
+- `POST /api/rag/eval` runs a small retrieval eval set
+- default tests do not need Docker or a live LLM
+- `pgvector` profile uses PostgreSQL + pgvector
+- `ollama` profile can use local `nomic-embed-text` and `llama3.2:3b`
 
-## Curated free resources
+## Recommended Commands
 
-- Spring AI Reference — "Retrieval Augmented Generation" section (the whole thing)
-- Spring AI Reference — "PGVector Vector Store" page
-- Spring AI examples — `rag/` folder on GitHub
-- pgvector GitHub README — index tuning advice (`github.com/pgvector/pgvector`)
-- Anthropic — "Contextual Retrieval" blog post (groundbreaking 2024 technique, applicable in Spring AI)
+Run tests:
 
-## Interview prep highlights
+```powershell
+cd F:\GEN_AI_COURSE\module_05_rag_with_pgvector\mini_project
+mvn test
+```
 
-- "Design RAG over 10M documents in Spring Boot. Cover chunking, embeddings, storage, retrieval, reranking, evaluation."
-- "What chunking strategy for legal contracts vs source code vs chat logs?"
-- "When does keyword search beat vector search?"
-- "What is HyDE? When does it help, when does it hurt?"
-- "Your RAG hallucinates despite retrieved context — debug it."
-- "How would you migrate from pgvector to Pinecone if you outgrew Postgres?"
-- "Why pgvector when there are dedicated vector DBs? When would you switch?"
-- "Walk me through `QuestionAnswerAdvisor` internals."
+Start pgvector:
+
+```powershell
+docker compose up -d
+```
+
+Run with pgvector and deterministic local hash embeddings:
+
+```powershell
+mvn spring-boot:run "-Dspring-boot.run.profiles=pgvector"
+```
+
+Run with pgvector plus Ollama embeddings/chat:
+
+```powershell
+F:\Ollama\ollama.exe serve
+F:\Ollama\ollama.exe pull nomic-embed-text
+F:\Ollama\ollama.exe pull llama3.2:3b
+
+mvn spring-boot:run "-Dspring-boot.run.profiles=pgvector,ollama"
+```
+
+Smoke test:
+
+```powershell
+curl.exe -X POST http://localhost:8083/api/documents/ingest `
+  -H "Content-Type: application/json" `
+  -d "{\"documentId\":\"spring-ai-notes\",\"title\":\"Spring AI Notes\",\"source\":\"manual\",\"content\":\"Spring AI ChatClient is the fluent API for calling chat models. RAG retrieves relevant context before asking the model to answer.\"}"
+```
+
+```powershell
+curl.exe -X POST http://localhost:8083/api/rag/ask `
+  -H "Content-Type: application/json" `
+  -d "{\"question\":\"What is ChatClient used for?\",\"topK\":3}"
+```
+
+## Interview Prep Highlights
+
+By the end of Module 5, answer these cold:
+
+1. Why does RAG reduce hallucination but not eliminate it?
+2. How do chunk size and overlap change retrieval quality?
+3. Why pgvector instead of a managed vector database?
+4. How do you return citations?
+5. What is recall@k?
+6. When does keyword search beat vector search?
+7. What does reranking improve?
+8. How would you design RAG for 10 million enterprise documents?
+
+## Official References
+
+- Spring AI RAG and Advisors: `https://docs.spring.io/spring-ai/reference/api/retrieval-augmented-generation.html`
+- Spring AI Vector Stores: `https://docs.spring.io/spring-ai/reference/api/vectordbs.html`
+- pgvector: `https://github.com/pgvector/pgvector`
+
+Ready? Open `01_what_is_rag_and_why_it_solves_hallucination.md`.

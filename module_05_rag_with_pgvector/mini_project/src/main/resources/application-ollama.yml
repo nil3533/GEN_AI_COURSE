@@ -1,0 +1,5 @@
+app:
+  rag:
+    embedding-provider: ollama
+    chat-provider: spring-ai-ollama
+    embedding-dimensions: 768

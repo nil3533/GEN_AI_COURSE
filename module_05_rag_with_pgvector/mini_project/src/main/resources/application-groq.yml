@@ -1,0 +1,3 @@
+app:
+  rag:
+    chat-provider: spring-ai-groq
