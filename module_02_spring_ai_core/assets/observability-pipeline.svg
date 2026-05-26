@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1150" height="500" viewBox="0 0 1150 500" role="img" aria-labelledby="title desc">
+  <title id="title">ChatClient observability pipeline</title>
+  <desc id="desc">ChatClient calls emit timing, token usage, model, and provider data to metrics and logs so teams can debug cost, latency, and quality.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="1150" height="500" rx="22" fill="#f8fafc"/>
+  <text x="60" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="31" font-weight="700" fill="#0f172a">Observe Every LLM Call</text>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="70" y="178" width="200" height="110" rx="16" fill="#e0f2fe" stroke="#0284c7"/>
+    <text x="170" y="220" text-anchor="middle" font-size="20" font-weight="700" fill="#075985">ChatClient</text>
+    <text x="170" y="250" text-anchor="middle" font-size="16" fill="#0f172a">request and response</text>
+    <rect x="350" y="178" width="210" height="110" rx="16" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="455" y="220" text-anchor="middle" font-size="20" font-weight="700" fill="#166534">Metadata</text>
+    <text x="455" y="250" text-anchor="middle" font-size="16" fill="#0f172a">latency, model, usage</text>
+    <rect x="640" y="118" width="200" height="90" rx="16" fill="#fef3c7" stroke="#d97706"/>
+    <text x="740" y="156" text-anchor="middle" font-size="20" font-weight="700" fill="#92400e">Metrics</text>
+    <text x="740" y="184" text-anchor="middle" font-size="16" fill="#0f172a">Micrometer</text>
+    <rect x="640" y="278" width="200" height="90" rx="16" fill="#ede9fe" stroke="#7c3aed"/>
+    <text x="740" y="316" text-anchor="middle" font-size="20" font-weight="700" fill="#5b21b6">Logs</text>
+    <text x="740" y="344" text-anchor="middle" font-size="16" fill="#0f172a">debug trail</text>
+    <rect x="920" y="198" width="170" height="110" rx="16" fill="#ffe4e6" stroke="#e11d48"/>
+    <text x="1005" y="240" text-anchor="middle" font-size="20" font-weight="700" fill="#9f1239">Decisions</text>
+    <text x="1005" y="270" text-anchor="middle" font-size="16" fill="#0f172a">cost and quality</text>
+    <line x1="270" y1="233" x2="348" y2="233" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <line x1="560" y1="233" x2="638" y2="163" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <line x1="560" y1="233" x2="638" y2="323" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <line x1="840" y1="163" x2="918" y2="230" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <line x1="840" y1="323" x2="918" y2="270" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  </g>
+</svg>

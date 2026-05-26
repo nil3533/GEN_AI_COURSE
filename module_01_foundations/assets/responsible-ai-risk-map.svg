@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520" role="img" aria-labelledby="title desc">
+  <title id="title">Responsible AI risk map</title>
+  <desc id="desc">User input enters an LLM app, risk types are identified, and each risk has a matching control.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#334155"/></marker>
+  <style>.title{font:700 28px Segoe UI,Arial;fill:#0f172a}.h{font:700 14px Segoe UI,Arial;fill:#0f172a}.t{font:400 12px Segoe UI,Arial;fill:#334155}.line{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#arrow)}</style></defs>
+  <rect width="1120" height="520" fill="#f8fafc"/><text x="45" y="50" class="title">Responsible AI Risk Map</text>
+  <rect x="80" y="120" width="160" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="160" y="156" text-anchor="middle" class="h">User input</text>
+  <rect x="310" y="120" width="170" height="60" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="395" y="156" text-anchor="middle" class="h">LLM app</text>
+  <polygon points="590,95 720,150 590,205 460,150" fill="#fef3c7" stroke="#d97706" stroke-width="2"/><text x="590" y="145" text-anchor="middle" class="h">Risk type?</text>
+  <path d="M240 150 L310 150" class="line"/><path d="M480 150 L460 150" class="line"/>
+  <g transform="translate(760,70)"><rect width="270" height="52" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/><text x="135" y="22" text-anchor="middle" class="h">Wrong answer</text><text x="135" y="42" text-anchor="middle" class="t">validation and citations</text></g>
+  <g transform="translate(760,145)"><rect width="270" height="52" rx="8" fill="#fff1f2" stroke="#e11d48" stroke-width="2"/><text x="135" y="22" text-anchor="middle" class="h">Private data leakage</text><text x="135" y="42" text-anchor="middle" class="t">redaction and minimization</text></g>
+  <g transform="translate(760,220)"><rect width="270" height="52" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/><text x="135" y="22" text-anchor="middle" class="h">Bias or unfair treatment</text><text x="135" y="42" text-anchor="middle" class="t">diverse tests and review</text></g>
+  <g transform="translate(760,295)"><rect width="270" height="52" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="135" y="22" text-anchor="middle" class="h">Unsafe instruction</text><text x="135" y="42" text-anchor="middle" class="t">policy and refusal rules</text></g>
+  <g transform="translate(760,370)"><rect width="270" height="52" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="135" y="22" text-anchor="middle" class="h">Tool misuse</text><text x="135" y="42" text-anchor="middle" class="t">authorization and audit logs</text></g>
+  <path d="M720 145 L760 96" class="line"/><path d="M720 150 L760 171" class="line"/><path d="M710 175 L760 246" class="line"/><path d="M690 190 L760 321" class="line"/><path d="M665 199 L760 396" class="line"/>
+</svg>
+

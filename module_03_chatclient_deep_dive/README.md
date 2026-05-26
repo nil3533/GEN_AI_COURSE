@@ -1,50 +1,115 @@
-# Module 3 — ChatClient Deep Dive: Prompts, Streaming, Multi-Turn
+# Module 3 - ChatClient Deep Dive: Prompts, Streaming, Multi-Turn
 
-> **Week 5 · ~10 hours**
+> Week 5 - about 10 hours
 
----
+## What You Will Walk Away With
 
-## What you'll walk away with
+![Module 3 learning flow](assets/module-learning-flow.svg)
 
-Mastery of Spring AI's prompt construction, the four message types (`SystemMessage`, `UserMessage`, `AssistantMessage`, `ToolResponseMessage`), `PromptTemplate` with variable interpolation, and — critically — **streaming responses via Server-Sent Events (SSE)** so your UI shows tokens as they arrive instead of making the user wait 10 seconds for a full reply. Streaming is the difference between "demo feel" and "ChatGPT feel" in your applications.
+You will move from "I can call an LLM" to "I can design a production-grade chat API." Module 2 proved that Spring AI can hide provider details. Module 3 goes deeper into how prompts are assembled, how streaming changes the user experience, and how to carry a short conversation history without introducing full memory yet.
 
-You'll also learn prompt engineering techniques (zero-shot, few-shot, chain-of-thought, role prompting) in the Spring AI idiom.
+By the end of this module, you should be comfortable with:
 
----
+- message roles: system, user, assistant, and tool response
+- `ChatClient` request construction
+- prompt templates with runtime variables
+- zero-shot, few-shot, and role prompting patterns
+- Server-Sent Events for token streaming
+- manual session history before Spring AI memory
+- per-request temperature and max-token overrides
+- long-output truncation and continuation strategies
 
-## Files (outline)
+## Learning Hours Breakdown
 
-1. `01_anatomy_of_a_prompt.md` — Messages, roles, system prompt placement, what the LLM actually sees
-2. `02_prompt_templates_and_interpolation.md` — `PromptTemplate`, `TemplateRenderer`, StringTemplate vs Mustache, escaping pitfalls
-3. `03_prompt_engineering_techniques_in_spring_ai.md` — Zero-shot, few-shot examples, chain-of-thought, role prompting — implemented as `PromptTemplate`s
-4. `04_streaming_responses_with_sse.md` — `ChatClient.prompt().stream().content()` returning `Flux<String>`; exposing via Spring WebFlux + SSE
-5. `05_multi_turn_conversations_no_memory_yet.md` — Passing message history manually before we meet `ChatMemory` in Module 6
-6. `06_chatoptions_per_request.md` — Per-call overrides, provider-specific options (response_format, top_p, frequency_penalty)
-7. `07_handling_long_outputs_truncation.md` — `max_tokens`, response truncation detection, continuation strategies
+| Activity | Hours |
+|---|---:|
+| Reading concept files | 4 |
+| Prompt template exercises | 1 |
+| Streaming endpoint implementation | 2 |
+| Manual session history | 1 |
+| Testing and curl smoke checks | 1 |
+| Interview prep and notes | 1 |
+| Total | 10 |
 
-## Mini-project
+## Files in This Module
 
-**"Streaming chat REST API."** Build a Spring Boot service with `POST /api/chat/stream` returning a `text/event-stream` SSE response that streams the LLM's reply token-by-token. Support:
-- A session-scoped message history (just a `ConcurrentHashMap<sessionId, List<Message>>` for now — proper memory comes in Module 6)
-- A `PromptTemplate`-based system prompt with the date and a configurable persona
-- Per-request temperature override
-- Graceful client disconnect handling
-- A `/chat/non-streaming` endpoint for comparison so you can feel the UX difference
+Read in order:
 
-Test it from `curl --no-buffer` or a tiny HTML page. You'll wire this to React in Module 10.
+1. `01_anatomy_of_a_prompt.md` - message roles, prompt ordering, and what the model sees
+2. `02_prompt_templates_and_interpolation.md` - runtime variables, escaping, and safe templating
+3. `03_prompt_engineering_techniques_in_spring_ai.md` - zero-shot, few-shot, role prompting, and reasoning prompts
+4. `04_streaming_responses_with_sse.md` - `Flux<String>`, SSE events, and client disconnects
+5. `05_multi_turn_conversations_no_memory_yet.md` - storing short history manually before Module 6 memory
+6. `06_chatoptions_per_request.md` - temperature, max tokens, top-p, and provider-specific options
+7. `07_handling_long_outputs_truncation.md` - detecting cutoffs and designing continuation flows
+8. `interview_prep.md` - short answers and debugging scenarios
 
-**Push to:** `sani-genai-journey/m03-streaming-chat-api/`
+## Mini-Project: Streaming Chat REST API
 
-## Curated free resources
+Build a Spring Boot service that exposes both streaming and non-streaming chat endpoints.
 
-- Spring AI Reference — "ChatClient API" section, "Streaming" subsection
-- Spring docs — "Server-Sent Events" in Spring Web MVC and WebFlux
-- Anthropic Prompt Engineering Guide (free, language-agnostic) — `docs.anthropic.com/en/docs/build-with-claude/prompt-engineering`
+Required behavior:
 
-## Interview prep highlights
+- `POST /api/chat/stream` returns `text/event-stream`
+- `POST /api/chat/non-streaming` returns a normal JSON response
+- optional `sessionId` keeps a short conversation history in memory
+- system prompt uses runtime variables: `persona` and `currentDate`
+- per-request `temperature` override is supported
+- client disconnects are logged without corrupting session history
+- default tests do not call live Groq or Ollama APIs
 
-- "Why use streaming for LLM responses? What's the UX and engineering trade-off vs. waiting for the full response?"
-- "How does Server-Sent Events work? Why is it preferred over WebSockets for LLM streaming?"
-- "Walk me through `PromptTemplate` rendering — what happens if a user injects `{` characters?"
-- "Compare zero-shot, few-shot, and chain-of-thought prompting with concrete examples."
-- "Your streaming endpoint sometimes hangs after 30 seconds. Debug it."
+## Recommended Commands
+
+```powershell
+cd F:\GEN_AI_COURSE\module_03_chatclient_deep_dive\mini_project
+mvn test
+```
+
+Run with local Ollama:
+
+```powershell
+F:\Ollama\ollama.exe serve
+
+cd F:\GEN_AI_COURSE\module_03_chatclient_deep_dive\mini_project
+mvn spring-boot:run -Dspring-boot.run.profiles=ollama
+```
+
+Smoke test streaming:
+
+```powershell
+curl.exe --no-buffer -X POST http://localhost:8081/api/chat/stream `
+  -H "Content-Type: application/json" `
+  -d "{\"sessionId\":\"m03-demo\",\"message\":\"Explain SSE for LLM streaming in 3 bullets\",\"temperature\":0.2}"
+```
+
+Smoke test non-streaming:
+
+```powershell
+curl.exe -X POST http://localhost:8081/api/chat/non-streaming `
+  -H "Content-Type: application/json" `
+  -d "{\"sessionId\":\"m03-demo\",\"message\":\"Now summarize that in one sentence\"}"
+```
+
+## Interview Prep Highlights
+
+By the end of Module 3, answer these cold:
+
+1. Why does a system message usually come before user messages?
+2. What problem does a prompt template solve?
+3. When is few-shot prompting worth the extra tokens?
+4. Why is SSE a good default for LLM streaming?
+5. What should happen when a browser disconnects mid-stream?
+6. Why is manual history not the same as durable memory?
+7. How do temperature and max tokens change response behavior?
+8. How do you handle a response that stops because of token limits?
+
+## Official References
+
+Check these again before changing provider-specific code because Spring AI APIs move quickly.
+
+- Spring AI ChatClient API: `https://docs.spring.io/spring-ai/reference/api/chatclient.html`
+- Spring AI Prompts: `https://docs.spring.io/spring-ai/reference/api/prompt.html`
+- Spring Framework WebFlux: `https://docs.spring.io/spring-framework/reference/web/webflux.html`
+- Spring Framework SSE: `https://docs.spring.io/spring-framework/reference/web/webflux/controller/ann-methods/sse.html`
+
+Ready? Open `01_anatomy_of_a_prompt.md`.

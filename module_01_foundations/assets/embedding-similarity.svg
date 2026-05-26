@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="360" viewBox="0 0 1040 360" role="img" aria-labelledby="title desc">
+  <title id="title">Embedding similarity</title>
+  <desc id="desc">Two different password questions become vectors that are close together in meaning.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#334155"/></marker>
+  <style>.title{font:700 28px Segoe UI,Arial;fill:#0f172a}.h{font:700 15px Segoe UI,Arial;fill:#0f172a}.t{font:400 12px Segoe UI,Arial;fill:#334155}.line{stroke:#334155;stroke-width:2.2;fill:none;marker-end:url(#arrow)}</style></defs>
+  <rect width="1040" height="360" fill="#f8fafc"/><text x="45" y="50" class="title">Embeddings: Similar Meaning, Similar Vectors</text>
+  <rect x="60" y="105" width="260" height="64" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="190" y="132" text-anchor="middle" class="h">How do I reset my password?</text><text x="190" y="153" text-anchor="middle" class="t">user wording A</text>
+  <rect x="60" y="225" width="260" height="64" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="190" y="252" text-anchor="middle" class="h">I forgot my login password</text><text x="190" y="273" text-anchor="middle" class="t">user wording B</text>
+  <rect x="420" y="105" width="210" height="64" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="525" y="132" text-anchor="middle" class="h">Embedding vector</text><text x="525" y="153" text-anchor="middle" class="t">[0.13, -0.44, ...]</text>
+  <rect x="420" y="225" width="210" height="64" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="525" y="252" text-anchor="middle" class="h">Embedding vector</text><text x="525" y="273" text-anchor="middle" class="t">[0.11, -0.41, ...]</text>
+  <rect x="745" y="165" width="230" height="70" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/><text x="860" y="194" text-anchor="middle" class="h">Vectors are close</text><text x="860" y="217" text-anchor="middle" class="t">retrieval sees same intent</text>
+  <path d="M320 137 L420 137" class="line"/><path d="M320 257 L420 257" class="line"/><path d="M630 137 C700 145 725 175 745 190" class="line"/><path d="M630 257 C700 250 725 225 745 210" class="line"/>
+</svg>
+

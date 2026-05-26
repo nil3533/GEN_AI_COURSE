@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520" role="img" aria-labelledby="title desc">
+  <title id="title">Provider decision matrix</title>
+  <desc id="desc">Choose an LLM provider by matching use case constraints such as quality, latency, privacy, cost, and local development.</desc>
+  <rect width="1120" height="520" rx="22" fill="#ffffff"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="60" y="72" font-size="31" font-weight="700" fill="#0f172a">Provider Choice Is an Architecture Decision</text>
+    <text x="60" y="106" font-size="18" fill="#475569">Do not choose only by popularity. Match the model to the workload and operational constraints.</text>
+    <rect x="78" y="160" width="210" height="250" rx="16" fill="#e0f2fe" stroke="#0284c7"/>
+    <text x="183" y="198" text-anchor="middle" font-size="20" font-weight="700" fill="#075985">Hosted frontier</text>
+    <text x="183" y="238" text-anchor="middle" font-size="16" fill="#0f172a">best quality</text>
+    <text x="183" y="270" text-anchor="middle" font-size="16" fill="#0f172a">managed scale</text>
+    <text x="183" y="302" text-anchor="middle" font-size="16" fill="#0f172a">higher cost</text>
+    <text x="183" y="334" text-anchor="middle" font-size="16" fill="#0f172a">external data path</text>
+    <rect x="333" y="160" width="210" height="250" rx="16" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="438" y="198" text-anchor="middle" font-size="20" font-weight="700" fill="#166534">Fast hosted</text>
+    <text x="438" y="238" text-anchor="middle" font-size="16" fill="#0f172a">low latency</text>
+    <text x="438" y="270" text-anchor="middle" font-size="16" fill="#0f172a">good free tiers</text>
+    <text x="438" y="302" text-anchor="middle" font-size="16" fill="#0f172a">great demos</text>
+    <text x="438" y="334" text-anchor="middle" font-size="16" fill="#0f172a">provider limits</text>
+    <rect x="588" y="160" width="210" height="250" rx="16" fill="#fef3c7" stroke="#d97706"/>
+    <text x="693" y="198" text-anchor="middle" font-size="20" font-weight="700" fill="#92400e">Local model</text>
+    <text x="693" y="238" text-anchor="middle" font-size="16" fill="#0f172a">private dev loop</text>
+    <text x="693" y="270" text-anchor="middle" font-size="16" fill="#0f172a">no API bill</text>
+    <text x="693" y="302" text-anchor="middle" font-size="16" fill="#0f172a">lower quality</text>
+    <text x="693" y="334" text-anchor="middle" font-size="16" fill="#0f172a">hardware bound</text>
+    <rect x="843" y="160" width="210" height="250" rx="16" fill="#ede9fe" stroke="#7c3aed"/>
+    <text x="948" y="198" text-anchor="middle" font-size="20" font-weight="700" fill="#5b21b6">Hybrid</text>
+    <text x="948" y="238" text-anchor="middle" font-size="16" fill="#0f172a">route by task</text>
+    <text x="948" y="270" text-anchor="middle" font-size="16" fill="#0f172a">fallback support</text>
+    <text x="948" y="302" text-anchor="middle" font-size="16" fill="#0f172a">benchmark needed</text>
+    <text x="948" y="334" text-anchor="middle" font-size="16" fill="#0f172a">more ops work</text>
+  </g>
+</svg>

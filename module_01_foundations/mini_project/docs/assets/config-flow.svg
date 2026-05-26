@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430" role="img" aria-labelledby="title desc">
+  <title id="title">Configuration Flow</title>
+  <desc id="desc">GROQ_API_KEY flows from Windows environment to application YAML, configuration properties, RestClient, and LlmService.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 28px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .box-title { font: 700 17px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .text { font: 400 14px Segoe UI, Arial, sans-serif; fill: #334155; }
+      .line { stroke: #334155; stroke-width: 2.3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1100" height="430" fill="#f8fafc"/>
+  <text x="55" y="52" class="title">Safe Configuration Flow</text>
+
+  <rect x="60" y="130" width="185" height="92" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+  <text x="152" y="162" text-anchor="middle" class="box-title">Environment</text>
+  <text x="152" y="190" text-anchor="middle" class="text">GROQ_API_KEY</text>
+
+  <rect x="310" y="130" width="185" height="92" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="402" y="162" text-anchor="middle" class="box-title">application.yml</text>
+  <text x="402" y="190" text-anchor="middle" class="text">${GROQ_API_KEY:}</text>
+
+  <rect x="560" y="130" width="185" height="92" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="652" y="162" text-anchor="middle" class="box-title">GroqProperties</text>
+  <text x="652" y="190" text-anchor="middle" class="text">binds groq.*</text>
+
+  <rect x="810" y="130" width="220" height="92" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="920" y="162" text-anchor="middle" class="box-title">RestClientConfig</text>
+  <text x="920" y="190" text-anchor="middle" class="text">adds Bearer header</text>
+
+  <path d="M 245 176 L 310 176" class="line"/>
+  <path d="M 495 176 L 560 176" class="line"/>
+  <path d="M 745 176 L 810 176" class="line"/>
+
+  <rect x="350" y="300" width="400" height="62" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="550" y="326" text-anchor="middle" class="box-title">Rule</text>
+  <text x="550" y="350" text-anchor="middle" class="text">Never store the real key in source files.</text>
+</svg>
+

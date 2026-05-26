@@ -1,0 +1,8 @@
+app:
+  ai:
+    active-provider: ollama
+    providers:
+      ollama:
+        enabled: ${APP_AI_OLLAMA_ENABLED:true}
+      groq:
+        enabled: ${APP_AI_GROQ_ENABLED:false}

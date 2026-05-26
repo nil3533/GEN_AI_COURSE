@@ -6,6 +6,8 @@
 
 ## What you'll walk away with
 
+![Module 1 learning flow](assets/module-learning-flow.svg)
+
 A clear mental model of: what an LLM actually is, what a transformer actually does, why GenAI differs from "traditional" ML, what tokens/embeddings/context-windows mean in practice, and how Responsible AI affects what you build. By the end you will have written a **Spring Boot service that calls a real LLM via raw `RestClient`** — no Spring AI yet, just HTTP. That's deliberate — you'll appreciate Spring AI's abstractions in Module 2 only after you've felt the pain of raw HTTP.
 
 This is the conceptual foundation for everything else. Don't skip it.

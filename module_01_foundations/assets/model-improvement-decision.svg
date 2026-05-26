@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="520" viewBox="0 0 1080 520" role="img" aria-labelledby="title desc">
+  <title id="title">Model improvement decision flow</title>
+  <desc id="desc">A decision flow for choosing RAG, tools, prompting, structured output, or fine-tuning.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#334155"/></marker>
+  <style>.title{font:700 28px Segoe UI,Arial;fill:#0f172a}.h{font:700 15px Segoe UI,Arial;fill:#0f172a}.t{font:400 12px Segoe UI,Arial;fill:#334155}.line{stroke:#334155;stroke-width:2.2;fill:none;marker-end:url(#arrow)}</style></defs>
+  <rect width="1080" height="520" fill="#f8fafc"/><text x="45" y="50" class="title">How to Improve LLM Answers</text>
+  <rect x="430" y="90" width="220" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="540" y="126" text-anchor="middle" class="h">Need better answers?</text>
+  <polygon points="540,190 690,260 540,330 390,260" fill="#fef3c7" stroke="#d97706" stroke-width="2"/><text x="540" y="253" text-anchor="middle" class="h">Missing knowledge?</text><text x="540" y="276" text-anchor="middle" class="t">private, live, or large data</text>
+  <rect x="80" y="230" width="210" height="60" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="185" y="254" text-anchor="middle" class="h">Use RAG or tools</text><text x="185" y="276" text-anchor="middle" class="t">retrieve or call systems</text>
+  <polygon points="540,365 675,420 540,475 405,420" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="540" y="414" text-anchor="middle" class="h">Format inconsistent?</text><text x="540" y="437" text-anchor="middle" class="t">JSON, schema, style</text>
+  <rect x="760" y="390" width="230" height="60" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/><text x="875" y="414" text-anchor="middle" class="h">Prompt/structured output</text><text x="875" y="436" text-anchor="middle" class="t">tighten instructions</text>
+  <rect x="80" y="390" width="230" height="60" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/><text x="195" y="414" text-anchor="middle" class="h">Consider fine-tuning</text><text x="195" y="436" text-anchor="middle" class="t">only for repeated style</text>
+  <path d="M540 150 L540 190" class="line"/><path d="M390 260 L290 260" class="line"/><path d="M540 330 L540 365" class="line"/><path d="M675 420 L760 420" class="line"/><path d="M405 420 L310 420" class="line"/>
+  <text x="330" y="248" class="t">yes</text><text x="555" y="350" class="t">no</text><text x="710" y="408" class="t">yes</text><text x="342" y="408" class="t">no / repeated style</text>
+</svg>
+

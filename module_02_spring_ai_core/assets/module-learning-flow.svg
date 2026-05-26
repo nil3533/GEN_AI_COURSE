@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Module 2 learning flow</title>
+  <desc id="desc">Module 2 starts with Spring AI concepts, then ChatClient, provider profiles, provider choice, Ollama, options, observability, and architecture tradeoffs.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="520" rx="24" fill="#f8fafc"/>
+  <rect x="36" y="36" width="1128" height="448" rx="22" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="70" y="88" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" fill="#0f172a">Module 2: Spring AI Core</text>
+  <text x="70" y="122" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#475569">Move from raw HTTP calls to Spring AI abstractions, then make provider switching a configuration decision.</text>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="70" y="178" width="150" height="86" rx="14" fill="#e0f2fe" stroke="#0284c7"/>
+    <text x="145" y="212" text-anchor="middle" font-size="17" font-weight="700" fill="#075985">01</text>
+    <text x="145" y="238" text-anchor="middle" font-size="16" fill="#0f172a">Why Spring AI</text>
+    <rect x="252" y="178" width="150" height="86" rx="14" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="327" y="212" text-anchor="middle" font-size="17" font-weight="700" fill="#166534">02</text>
+    <text x="327" y="238" text-anchor="middle" font-size="16" fill="#0f172a">ChatClient</text>
+    <rect x="434" y="178" width="150" height="86" rx="14" fill="#fef3c7" stroke="#d97706"/>
+    <text x="509" y="212" text-anchor="middle" font-size="17" font-weight="700" fill="#92400e">03</text>
+    <text x="509" y="238" text-anchor="middle" font-size="16" fill="#0f172a">Profiles</text>
+    <rect x="616" y="178" width="150" height="86" rx="14" fill="#ede9fe" stroke="#7c3aed"/>
+    <text x="691" y="212" text-anchor="middle" font-size="17" font-weight="700" fill="#5b21b6">04</text>
+    <text x="691" y="238" text-anchor="middle" font-size="16" fill="#0f172a">Provider choice</text>
+    <rect x="798" y="178" width="150" height="86" rx="14" fill="#ccfbf1" stroke="#0d9488"/>
+    <text x="873" y="212" text-anchor="middle" font-size="17" font-weight="700" fill="#115e59">05</text>
+    <text x="873" y="238" text-anchor="middle" font-size="16" fill="#0f172a">Ollama local</text>
+    <rect x="980" y="178" width="150" height="86" rx="14" fill="#ffe4e6" stroke="#e11d48"/>
+    <text x="1055" y="212" text-anchor="middle" font-size="17" font-weight="700" fill="#9f1239">06</text>
+    <text x="1055" y="238" text-anchor="middle" font-size="16" fill="#0f172a">Chat options</text>
+    <rect x="322" y="354" width="210" height="88" rx="14" fill="#f1f5f9" stroke="#64748b"/>
+    <text x="427" y="390" text-anchor="middle" font-size="17" font-weight="700" fill="#334155">07</text>
+    <text x="427" y="416" text-anchor="middle" font-size="16" fill="#0f172a">Observability</text>
+    <rect x="668" y="354" width="210" height="88" rx="14" fill="#fff7ed" stroke="#f97316"/>
+    <text x="773" y="390" text-anchor="middle" font-size="17" font-weight="700" fill="#9a3412">08</text>
+    <text x="773" y="416" text-anchor="middle" font-size="16" fill="#0f172a">When to skip it</text>
+  </g>
+  <line x1="220" y1="221" x2="250" y2="221" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="402" y1="221" x2="432" y2="221" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="584" y1="221" x2="614" y2="221" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="766" y1="221" x2="796" y2="221" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="948" y1="221" x2="978" y2="221" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1055 264 C1055 330 427 300 427 350" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="532" y1="398" x2="666" y2="398" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+</svg>

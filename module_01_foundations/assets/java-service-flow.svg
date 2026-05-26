@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="380" viewBox="0 0 1120 380" role="img" aria-labelledby="title desc">
+  <title id="title">Java service flow</title>
+  <desc id="desc">AskRequest DTO is validated, API key is checked, request body is built, RestClient posts, response is deserialized, choices and usage are extracted, and AskResponse is returned.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#334155"/></marker><style>.title{font:700 28px Segoe UI,Arial;fill:#0f172a}.h{font:700 13px Segoe UI,Arial;fill:#0f172a}.t{font:400 11px Segoe UI,Arial;fill:#334155}.line{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#arrow)}</style></defs>
+  <rect width="1120" height="380" fill="#f8fafc"/><text x="45" y="50" class="title">Inside the Spring Service</text>
+  <g transform="translate(35,135)"><rect width="125" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="62" y="26" text-anchor="middle" class="h">AskRequest</text><text x="62" y="45" text-anchor="middle" class="t">question</text></g>
+  <g transform="translate(190,135)"><rect width="125" height="60" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="62" y="26" text-anchor="middle" class="h">Validate</text><text x="62" y="45" text-anchor="middle" class="t">not blank</text></g>
+  <g transform="translate(345,135)"><rect width="125" height="60" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/><text x="62" y="26" text-anchor="middle" class="h">Check key</text><text x="62" y="45" text-anchor="middle" class="t">GROQ_API_KEY</text></g>
+  <g transform="translate(500,135)"><rect width="125" height="60" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="62" y="26" text-anchor="middle" class="h">Build JSON</text><text x="62" y="45" text-anchor="middle" class="t">model + messages</text></g>
+  <g transform="translate(655,135)"><rect width="125" height="60" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/><text x="62" y="26" text-anchor="middle" class="h">RestClient</text><text x="62" y="45" text-anchor="middle" class="t">POST</text></g>
+  <g transform="translate(810,135)"><rect width="125" height="60" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/><text x="62" y="26" text-anchor="middle" class="h">Parse</text><text x="62" y="45" text-anchor="middle" class="t">choices + usage</text></g>
+  <g transform="translate(965,135)"><rect width="125" height="60" rx="8" fill="#fff1f2" stroke="#e11d48" stroke-width="2"/><text x="62" y="26" text-anchor="middle" class="h">AskResponse</text><text x="62" y="45" text-anchor="middle" class="t">JSON result</text></g>
+  <path d="M160 165 L190 165" class="line"/><path d="M315 165 L345 165" class="line"/><path d="M470 165 L500 165" class="line"/><path d="M625 165 L655 165" class="line"/><path d="M780 165 L810 165" class="line"/><path d="M935 165 L965 165" class="line"/>
+</svg>
+

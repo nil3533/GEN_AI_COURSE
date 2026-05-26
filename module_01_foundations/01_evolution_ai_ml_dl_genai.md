@@ -16,35 +16,7 @@ You also need this map for practical reasons: in many problems, classical ML is 
 
 AI as a family tree:
 
-```
-                       ARTIFICIAL INTELLIGENCE (1956)
-                              │
-                              │  "Make machines do
-                              │   tasks that need
-                              │   human intelligence"
-                              │
-                ┌─────────────┴──────────────┐
-                │                            │
-         Rule-Based AI                Machine Learning (1980s)
-         (expert systems,             "Let machines learn
-          if-then rules)               patterns from data"
-                                            │
-                                ┌───────────┴────────────┐
-                                │                        │
-                         Classical ML              Deep Learning (2012)
-                         (decision trees,         "Use deep neural
-                          SVM, random forest)      networks"
-                                                        │
-                                                        │
-                                                 Generative AI (2022+)
-                                                 "Networks so big they
-                                                  can generate novel
-                                                  content"
-                                                        │
-                                                        │
-                                                      LLMs
-                                                  (your daily tool)
-```
+![AI family tree](assets/ai-family-tree.svg)
 
 Each layer is a **subset** of the one above it. All deep learning is ML; all GenAI is deep learning; not all deep learning is GenAI. (Image classification with a CNN is deep learning but not GenAI — it predicts a label, doesn't generate content.)
 
@@ -129,7 +101,7 @@ public class SentimentController {
         var text = body.get("text");
 
         var request = Map.of(
-            "model", "llama-3.1-70b-versatile",
+            "model", "llama-3.3-70b-versatile",
             "temperature", 0,
             "messages", List.of(
                 Map.of("role", "system",

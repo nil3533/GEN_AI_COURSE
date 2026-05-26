@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="620" viewBox="0 0 1120 620" role="img" aria-labelledby="title desc">
+  <title id="title">AI, ML, Deep Learning, GenAI, and LLM family tree</title>
+  <desc id="desc">A hierarchy showing AI as the broad field, with machine learning, deep learning, generative AI, and LLMs as nested concepts.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 30px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .sub { font: 400 15px Segoe UI, Arial, sans-serif; fill: #475569; }
+      .h { font: 700 17px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .t { font: 400 13px Segoe UI, Arial, sans-serif; fill: #334155; }
+      .line { stroke: #334155; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1120" height="620" fill="#f8fafc"/>
+  <text x="56" y="55" class="title">AI Family Tree</text>
+  <text x="56" y="82" class="sub">Each layer is a subset of the layer above it. LLMs are one important kind of Generative AI.</text>
+
+  <rect x="420" y="120" width="280" height="80" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="560" y="151" text-anchor="middle" class="h">Artificial Intelligence</text>
+  <text x="560" y="176" text-anchor="middle" class="t">Machines doing intelligent tasks</text>
+
+  <rect x="120" y="270" width="250" height="82" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="245" y="301" text-anchor="middle" class="h">Rule-Based AI</text>
+  <text x="245" y="326" text-anchor="middle" class="t">Human-written if-then rules</text>
+
+  <rect x="510" y="270" width="250" height="82" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="635" y="301" text-anchor="middle" class="h">Machine Learning</text>
+  <text x="635" y="326" text-anchor="middle" class="t">Learns patterns from data</text>
+
+  <rect x="510" y="405" width="250" height="82" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="635" y="436" text-anchor="middle" class="h">Deep Learning</text>
+  <text x="635" y="461" text-anchor="middle" class="t">Deep neural networks</text>
+
+  <rect x="815" y="405" width="230" height="82" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="930" y="436" text-anchor="middle" class="h">Classical ML</text>
+  <text x="930" y="461" text-anchor="middle" class="t">Trees, SVMs, regression</text>
+
+  <rect x="510" y="525" width="250" height="60" rx="10" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+  <text x="635" y="549" text-anchor="middle" class="h">Generative AI</text>
+  <text x="635" y="570" text-anchor="middle" class="t">Creates text, code, images, audio</text>
+
+  <rect x="815" y="525" width="230" height="60" rx="10" fill="#fff1f2" stroke="#e11d48" stroke-width="2"/>
+  <text x="930" y="549" text-anchor="middle" class="h">LLMs</text>
+  <text x="930" y="570" text-anchor="middle" class="t">Text and code generation</text>
+
+  <path d="M520 200 C410 240 315 250 245 270" class="line"/>
+  <path d="M590 200 C610 230 625 245 635 270" class="line"/>
+  <path d="M635 352 L635 405" class="line"/>
+  <path d="M760 311 C835 330 895 360 930 405" class="line"/>
+  <path d="M635 487 L635 525" class="line"/>
+  <path d="M760 555 L815 555" class="line"/>
+</svg>
+

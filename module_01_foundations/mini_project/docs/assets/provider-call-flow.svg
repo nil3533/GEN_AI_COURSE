@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="420" viewBox="0 0 1120 420" role="img" aria-labelledby="title desc">
+  <title id="title">Provider Call Flow</title>
+  <desc id="desc">LlmService uses RestClient to call Groq chat completions and parse choices and usage.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 28px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .label { font: 700 17px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .text { font: 400 14px Segoe UI, Arial, sans-serif; fill: #334155; }
+      .line { stroke: #334155; stroke-width: 2.3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1120" height="420" fill="#f8fafc"/>
+  <text x="55" y="52" class="title">Provider Call and Response Parsing</text>
+
+  <rect x="60" y="150" width="170" height="82" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="145" y="181" text-anchor="middle" class="label">LlmService</text>
+  <text x="145" y="205" text-anchor="middle" class="text">request body</text>
+
+  <rect x="300" y="150" width="170" height="82" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="385" y="181" text-anchor="middle" class="label">RestClient</text>
+  <text x="385" y="205" text-anchor="middle" class="text">POST HTTPS</text>
+
+  <rect x="540" y="150" width="185" height="82" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="632" y="181" text-anchor="middle" class="label">Groq API</text>
+  <text x="632" y="205" text-anchor="middle" class="text">chat completions</text>
+
+  <rect x="795" y="95" width="250" height="70" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="920" y="124" text-anchor="middle" class="label">choices[0].message</text>
+  <text x="920" y="147" text-anchor="middle" class="text">assistant answer text</text>
+
+  <rect x="795" y="235" width="250" height="70" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+  <text x="920" y="264" text-anchor="middle" class="label">usage</text>
+  <text x="920" y="287" text-anchor="middle" class="text">prompt and completion tokens</text>
+
+  <path d="M 230 191 L 300 191" class="line"/>
+  <path d="M 470 191 L 540 191" class="line"/>
+  <path d="M 725 176 L 795 132" class="line"/>
+  <path d="M 725 206 L 795 270" class="line"/>
+
+  <rect x="350" y="335" width="420" height="50" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="560" y="366" text-anchor="middle" class="text">Service returns AskResponse: answer + tokens + latency + model</text>
+</svg>
+

@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: m03-streaming-chat-api
+  ai:
+    model:
+      audio:
+        speech: none
+        transcription: none
+      chat: none
+      embedding: none
+      image: none
+      moderation: none
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+app:
+  ai:
+    active-provider: ollama
+    persona: a concise Java and Spring Boot mentor
+    max-history-messages: 12
+    system-prompt-template: >
+      You are {persona}.
+      Today is {currentDate}.
+      Answer with practical Java and Spring Boot examples.
+      Keep answers concise unless the user asks for depth.
+    providers:
+      ollama:
+        enabled: true
+        type: ollama
+        base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+        model: ${OLLAMA_MODEL:llama3.2:3b}
+        temperature: 0.2
+        max-tokens: 800
+      groq:
+        enabled: false
+        type: openai-compatible
+        base-url: https://api.groq.com/openai
+        api-key: ${GROQ_API_KEY:}
+        model: ${GROQ_MODEL:llama-3.3-70b-versatile}
+        temperature: 0.3
+        max-tokens: 800

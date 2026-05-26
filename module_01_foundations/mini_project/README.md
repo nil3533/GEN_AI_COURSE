@@ -6,6 +6,8 @@
 
 ## The challenge
 
+![Spring Boot to Groq architecture overview](docs/assets/architecture-overview.svg)
+
 Build a Spring Boot service that exposes `POST /ask` and calls an LLM (Groq). Use only `spring-boot-starter-web` and `RestClient` — no `spring-ai-*` dependencies. The point: feel what an LLM API call looks like at the HTTP level so Module 2's Spring AI abstractions make sense.
 
 By the end you'll have:
@@ -56,7 +58,7 @@ spring:
 groq:
   base-url: https://api.groq.com/openai/v1
   api-key: ${GROQ_API_KEY:}    # reads from env var; empty default
-  model: llama-3.1-70b-versatile
+  model: llama-3.3-70b-versatile
   timeout-seconds: 30
 
 server:
@@ -404,11 +406,21 @@ Expected response (formatted):
   "promptTokens": 65,
   "completionTokens": 84,
   "latencyMs": 1247,
-  "model": "llama-3.1-70b-versatile"
+  "model": "llama-3.3-70b-versatile"
 }
 ```
 
 The three numbers — **promptTokens, completionTokens, latencyMs** — are the metrics you'll measure in every production GenAI system. Burn them into your brain.
+
+---
+
+## Visual guides added in this repo
+
+These companion files explain the implemented project with diagrams and runnable examples:
+
+- `docs/00_infographic_overview.md` - architecture infographic, request lifecycle, and configuration flow
+- `docs/01_request_response_walkthrough.md` - `/ask` request/response examples for Postman and curl
+- `docs/02_errors_testing_and_troubleshooting.md` - error mapping, mocked testing strategy, and debug checklist
 
 ---
 
@@ -454,7 +466,7 @@ Add this project to the root `README.md` of your repo with a one-line descriptio
 If you finish with time, try these — they preview ideas from later modules:
 
 1. **Multi-turn conversation.** Track a `sessionId` → list of past messages. (Foreshadows Module 6 — chat memory.)
-2. **Try a different model.** Swap `llama-3.1-70b-versatile` for `llama-3.1-8b-instant`. Compare quality, speed, token cost. (Module 2.)
+2. **Try a different model.** Swap `llama-3.3-70b-versatile` for another currently available Groq chat model. Compare quality, speed, token cost. (Module 2.)
 3. **Add streaming.** Use `RestClient` with `bodyToFlux` (Reactor) to stream the response token-by-token. (Module 3 — SSE streaming.)
 4. **Switch providers.** Get a Google AI Studio key and modify the service to call Gemini instead. Notice how the request shape differs. (Motivates Spring AI's abstraction in Module 2.)
 5. **Add Resilience4j circuit breaker.** Open the circuit on consecutive 5xx responses. (Module 9 — resilience.)

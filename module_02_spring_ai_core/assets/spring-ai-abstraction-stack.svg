@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
+  <title id="title">Spring AI abstraction stack</title>
+  <desc id="desc">Spring Boot application code uses ChatClient, which uses ChatModel implementations, provider starters, HTTP clients, and model providers.</desc>
+  <rect width="1100" height="520" rx="22" fill="#f8fafc"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="70" y="76" font-size="32" font-weight="700" fill="#0f172a">Spring AI Abstraction Stack</text>
+    <text x="70" y="110" font-size="18" fill="#475569">Your app talks to Spring-style interfaces. Provider details move behind configuration and auto-configuration.</text>
+    <rect x="120" y="150" width="860" height="58" rx="12" fill="#e0f2fe" stroke="#0284c7"/>
+    <text x="550" y="187" text-anchor="middle" font-size="20" font-weight="700" fill="#075985">Controller / Service / Business Workflow</text>
+    <rect x="170" y="236" width="760" height="58" rx="12" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="550" y="273" text-anchor="middle" font-size="20" font-weight="700" fill="#166534">ChatClient: fluent API for prompts and calls</text>
+    <rect x="220" y="322" width="660" height="58" rx="12" fill="#fef3c7" stroke="#d97706"/>
+    <text x="550" y="359" text-anchor="middle" font-size="20" font-weight="700" fill="#92400e">ChatModel: provider-neutral model contract</text>
+    <rect x="270" y="408" width="560" height="58" rx="12" fill="#ede9fe" stroke="#7c3aed"/>
+    <text x="550" y="445" text-anchor="middle" font-size="20" font-weight="700" fill="#5b21b6">Groq / Ollama / configured provider adapters</text>
+  </g>
+</svg>

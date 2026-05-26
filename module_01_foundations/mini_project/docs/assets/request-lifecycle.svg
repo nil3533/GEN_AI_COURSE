@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">Request Lifecycle</title>
+  <desc id="desc">A numbered request lifecycle from client to Spring Boot to Groq and back.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+    <style>
+      .title { font: 700 30px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .step { font: 700 18px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .body { font: 400 14px Segoe UI, Arial, sans-serif; fill: #334155; }
+      .num { font: 700 18px Segoe UI, Arial, sans-serif; fill: white; }
+      .line { stroke: #475569; stroke-width: 2.3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1200" height="650" fill="#f8fafc"/>
+  <text x="60" y="55" class="title">Request Lifecycle: POST /ask</text>
+
+  <g transform="translate(70,115)">
+    <circle cx="24" cy="24" r="22" fill="#2563eb"/><text x="24" y="31" text-anchor="middle" class="num">1</text>
+    <rect x="60" y="0" width="310" height="70" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="80" y="28" class="step">Client sends question</text>
+    <text x="80" y="52" class="body">Postman or curl posts JSON to /ask.</text>
+  </g>
+
+  <g transform="translate(70,215)">
+    <circle cx="24" cy="24" r="22" fill="#16a34a"/><text x="24" y="31" text-anchor="middle" class="num">2</text>
+    <rect x="60" y="0" width="310" height="70" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="80" y="28" class="step">Controller validates input</text>
+    <text x="80" y="52" class="body">Blank or oversized questions fail early.</text>
+  </g>
+
+  <g transform="translate(70,315)">
+    <circle cx="24" cy="24" r="22" fill="#d97706"/><text x="24" y="31" text-anchor="middle" class="num">3</text>
+    <rect x="60" y="0" width="310" height="70" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="80" y="28" class="step">Service builds LLM request</text>
+    <text x="80" y="52" class="body">Adds model, system message, user message.</text>
+  </g>
+
+  <g transform="translate(640,115)">
+    <circle cx="24" cy="24" r="22" fill="#7c3aed"/><text x="24" y="31" text-anchor="middle" class="num">4</text>
+    <rect x="60" y="0" width="360" height="70" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+    <text x="80" y="28" class="step">RestClient calls Groq</text>
+    <text x="80" y="52" class="body">POST /chat/completions with Bearer token.</text>
+  </g>
+
+  <g transform="translate(640,215)">
+    <circle cx="24" cy="24" r="22" fill="#dc2626"/><text x="24" y="31" text-anchor="middle" class="num">5</text>
+    <rect x="60" y="0" width="360" height="70" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+    <text x="80" y="28" class="step">Groq returns answer</text>
+    <text x="80" y="52" class="body">Response includes choices and token usage.</text>
+  </g>
+
+  <g transform="translate(640,315)">
+    <circle cx="24" cy="24" r="22" fill="#0891b2"/><text x="24" y="31" text-anchor="middle" class="num">6</text>
+    <rect x="60" y="0" width="360" height="70" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+    <text x="80" y="28" class="step">App returns AskResponse</text>
+    <text x="80" y="52" class="body">answer, tokens, latency, model.</text>
+  </g>
+
+  <path d="M 250 185 L 250 215" class="line"/>
+  <path d="M 250 285 L 250 315" class="line"/>
+  <path d="M 440 350 C 535 350 535 150 700 150" class="line"/>
+  <path d="M 880 185 L 880 215" class="line"/>
+  <path d="M 880 285 L 880 315" class="line"/>
+  <path d="M 700 385 C 520 540 310 500 165 385" class="line"/>
+
+  <rect x="105" y="525" width="990" height="70" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="130" y="555" class="step">Key point</text>
+  <text x="230" y="555" class="body">The LLM call is just an HTTP request plus careful validation, configuration, error handling, and metrics.</text>
+</svg>
+

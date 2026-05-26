@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1150" height="500" viewBox="0 0 1150 500" role="img" aria-labelledby="title desc">
+  <title id="title">ChatClient call flow</title>
+  <desc id="desc">A Spring controller receives a question, ChatClient builds messages and options, the ChatModel calls a provider, and the response returns content and metadata.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="1150" height="500" rx="22" fill="#ffffff"/>
+  <text x="60" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="31" font-weight="700" fill="#0f172a">ChatClient Request Flow</text>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0f172a">
+    <rect x="60" y="160" width="170" height="92" rx="14" fill="#e0f2fe" stroke="#0284c7"/>
+    <text x="145" y="196" text-anchor="middle" font-weight="700">HTTP request</text>
+    <text x="145" y="224" text-anchor="middle">POST /ask</text>
+    <rect x="285" y="160" width="170" height="92" rx="14" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="370" y="196" text-anchor="middle" font-weight="700">Controller</text>
+    <text x="370" y="224" text-anchor="middle">validate input</text>
+    <rect x="510" y="160" width="170" height="92" rx="14" fill="#fef3c7" stroke="#d97706"/>
+    <text x="595" y="196" text-anchor="middle" font-weight="700">ChatClient</text>
+    <text x="595" y="224" text-anchor="middle">prompt + options</text>
+    <rect x="735" y="160" width="170" height="92" rx="14" fill="#ede9fe" stroke="#7c3aed"/>
+    <text x="820" y="196" text-anchor="middle" font-weight="700">ChatModel</text>
+    <text x="820" y="224" text-anchor="middle">provider adapter</text>
+    <rect x="960" y="160" width="140" height="92" rx="14" fill="#ffe4e6" stroke="#e11d48"/>
+    <text x="1030" y="196" text-anchor="middle" font-weight="700">Provider</text>
+    <text x="1030" y="224" text-anchor="middle">Groq/Ollama</text>
+    <line x1="230" y1="206" x2="283" y2="206" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <line x1="455" y1="206" x2="508" y2="206" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <line x1="680" y1="206" x2="733" y2="206" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <line x1="905" y1="206" x2="958" y2="206" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M1030 252 C1030 350 145 350 145 254" fill="none" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="575" y="374" text-anchor="middle" font-size="18" fill="#475569">Response returns content first; advanced code can inspect metadata, usage, and finish reason.</text>
+  </g>
+</svg>

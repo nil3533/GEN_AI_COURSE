@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="430" viewBox="0 0 1120 430" role="img" aria-labelledby="title desc">
+  <title id="title">LLM lifecycle</title>
+  <desc id="desc">Large datasets feed pre-training, then a base model is instruction tuned into a chat model used by applications or optionally fine-tuned.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#334155"/></marker>
+  <style>.title{font:700 28px Segoe UI,Arial;fill:#0f172a}.h{font:700 15px Segoe UI,Arial;fill:#0f172a}.t{font:400 12px Segoe UI,Arial;fill:#334155}.line{stroke:#334155;stroke-width:2.2;fill:none;marker-end:url(#arrow)}</style></defs>
+  <rect width="1120" height="430" fill="#f8fafc"/><text x="45" y="50" class="title">LLM Training and Application Lifecycle</text>
+  <rect x="45" y="135" width="160" height="72" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="125" y="162" text-anchor="middle" class="h">Huge text/code</text><text x="125" y="185" text-anchor="middle" class="t">training data</text>
+  <rect x="255" y="135" width="145" height="72" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/><text x="327" y="162" text-anchor="middle" class="h">Pre-training</text><text x="327" y="185" text-anchor="middle" class="t">predict next token</text>
+  <rect x="450" y="135" width="130" height="72" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="515" y="162" text-anchor="middle" class="h">Base model</text><text x="515" y="185" text-anchor="middle" class="t">continues text</text>
+  <rect x="630" y="135" width="160" height="72" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="710" y="162" text-anchor="middle" class="h">Instruction tuning</text><text x="710" y="185" text-anchor="middle" class="t">follows requests</text>
+  <rect x="840" y="135" width="130" height="72" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/><text x="905" y="162" text-anchor="middle" class="h">Chat model</text><text x="905" y="185" text-anchor="middle" class="t">API ready</text>
+  <rect x="755" y="295" width="150" height="64" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/><text x="830" y="320" text-anchor="middle" class="h">Your prompt</text><text x="830" y="342" text-anchor="middle" class="t">normal app use</text>
+  <rect x="955" y="295" width="130" height="64" rx="8" fill="#fff1f2" stroke="#e11d48" stroke-width="2"/><text x="1020" y="320" text-anchor="middle" class="h">Fine-tune</text><text x="1020" y="342" text-anchor="middle" class="t">optional</text>
+  <path d="M205 171 L255 171" class="line"/><path d="M400 171 L450 171" class="line"/><path d="M580 171 L630 171" class="line"/><path d="M790 171 L840 171" class="line"/>
+  <path d="M890 207 C870 245 850 270 830 295" class="line"/><path d="M930 207 C975 245 1005 270 1020 295" class="line"/>
+</svg>
+

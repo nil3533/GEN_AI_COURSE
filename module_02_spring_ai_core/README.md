@@ -1,52 +1,105 @@
-# Module 2 — Spring AI Core & Multi-Provider Setup
+# Module 2 - Spring AI Core and Multi-Provider Setup
 
-> **Weeks 3–4 · ~16 hours**
+> Weeks 3-4 - ~16 hours
 
----
+## What You Will Walk Away With
 
-## What you'll walk away with
+![Module 2 learning flow](assets/module-learning-flow.svg)
 
-Fluency with **Spring AI's `ChatClient`** — the fluent API that replaces all the raw HTTP code you wrote in Module 1's mini-project. You'll be able to swap LLM providers (OpenAI ↔ Anthropic ↔ Gemini ↔ Ollama ↔ Groq) by changing `application.yml`, with zero code changes. You'll know when to use which model and how to make defensible architecture decisions about LLM provider strategy.
+You will understand Spring AI's `ChatClient`, how it replaces the raw HTTP code from Module 1, and how to switch between providers using configuration instead of business-code changes.
 
-This is where Spring AI's "Spring conventions for AI" thesis pays off and your 12 years of Spring expertise becomes superpowers.
+By the end of this module, you should be comfortable with:
 
----
+- `ChatClient.Builder`
+- `prompt().user().call().content()`
+- `ChatModel` vs `ChatClient`
+- Spring profiles for Groq and Ollama
+- provider selection tradeoffs
+- local LLMs with Ollama
+- temperature, max tokens, and runtime options
+- basic observability for model calls
 
-## Files in this module (outline — full content built as you reach the module)
+## Learning Hours Breakdown
 
-1. `01_what_is_spring_ai_and_why_it_exists.md` — The thesis, the design philosophy, the comparison with LangChain4j and going framework-free
-2. `02_chatclient_the_fluent_api.md` — Deep dive into `ChatClient.Builder`, `prompt().user().call().content()`, fluent vs. low-level `ChatModel`
-3. `03_application_yml_driven_multi_provider.md` — Spring Profiles + provider-specific properties; the elegance of `spring.ai.openai.base-url`
-4. `04_provider_comparison_2026.md` — Cost, latency, capability, free-tier landscape — OpenAI, Anthropic, Gemini, Groq, Ollama, Mistral
-5. `05_running_local_llms_with_ollama.md` — Spring AI's `OllamaChatModel`, when local wins (privacy, cost at scale, dev iteration)
-6. `06_chatoptions_temperature_max_tokens_etc.md` — Per-request options, defaults, provider-specific options (function calling, JSON mode, etc.)
-7. `07_observability_at_the_chatclient_level.md` — Token counts, latency, model used — all exposed via Spring AI metrics
-8. `08_when_to_skip_spring_ai.md` — Honest discussion of when raw HTTP (or LangChain4j) is the right call
+| Activity | Hours |
+|---|---:|
+| Reading concept files | 6 |
+| Running ChatClient examples | 3 |
+| Provider profile setup | 2 |
+| Ollama and hosted provider comparison | 2 |
+| Mini-project | 2 |
+| Interview prep and notes | 1 |
+| Total | 16 |
 
-## Mini-project
+## Files in This Module
 
-**"Multi-provider chat service."** Rebuild Module 1's `/ask` endpoint using Spring AI's `ChatClient`. The same endpoint must work against:
-- Groq (Llama 3.1 70B)
-- Ollama (local Llama 3.1 8B)
-- Google Gemini (free tier)
-- (optional) OpenAI GPT-4o-mini if you have a key
+Read in order:
 
-Switching is done via Spring Profile (`-Dspring.profiles.active=ollama`), not code changes. Add a `/compare` endpoint that fans out the same question to all configured providers and returns a side-by-side comparison of answer, latency, and token cost. This is a real benchmarking tool you'll reuse.
+1. `01_what_is_spring_ai_and_why_it_exists.md` - why Spring AI exists and what it abstracts
+2. `02_chatclient_the_fluent_api.md` - `ChatClient` basics, prompts, templates, streaming, and responses
+3. `03_application_yml_driven_multi_provider.md` - Spring profiles for Groq and Ollama
+4. `04_provider_comparison_2026.md` - provider tradeoffs and what to benchmark
+5. `05_running_local_llms_with_ollama.md` - local model setup using your existing `llama3.2:3b`
+6. `06_chatoptions_temperature_max_tokens_etc.md` - runtime options and sensible defaults
+7. `07_observability_at_the_chatclient_level.md` - latency, token usage, logging, and Actuator
+8. `08_when_to_skip_spring_ai.md` - when raw HTTP or a provider SDK is better
+9. `interview_prep.md` - short answers and scenario practice
 
-**Push to:** `sani-genai-journey/m02-multi-provider-chat/`
+## Mini-Project: Multi-Provider Chat Service
 
-## Curated free resources
+Rebuild Module 1's `/ask` endpoint using Spring AI's `ChatClient`.
 
-- Spring AI Reference — "Getting Started" + "ChatClient API" sections (`docs.spring.io/spring-ai/reference`)
-- Dan Vega — "Spring AI Crash Course" YouTube (latest version)
-- Josh Long — "Spring Tips: Spring AI" episode (search YouTube)
-- Spring AI GitHub examples — the `chat-client/` and `models/` folders (`github.com/spring-projects/spring-ai-examples`)
+Required providers:
 
-## Interview prep highlights
+- Groq using `llama-3.3-70b-versatile`
+- Ollama using local `llama3.2:3b`
 
-- "Walk me through Spring AI's `ChatClient` API end-to-end."
-- "How would you design a system that can swap LLM providers based on a config flag?"
-- "When would you use Spring AI vs LangChain4j vs rolling your own?"
-- "Your Spring AI app currently uses GPT-4. Compliance now requires India-resident processing. Walk me through the migration."
-- "Compare prompt tuning, prompt engineering, and fine-tuning."
-- "What's the difference between `ChatClient` and `ChatModel` in Spring AI? When do you use each?"
+Required behavior:
+
+- `POST /ask` returns one answer from the active profile
+- `POST /compare` sends the same question to multiple configured providers
+- each response includes provider, model, answer, latency, token data when available, and error if failed
+- provider switching is done through Spring profiles, not controller if/else logic
+
+## Recommended Commands
+
+```bash
+# Run with Groq profile
+mvn spring-boot:run -Dspring-boot.run.profiles=groq
+
+# Run with Ollama profile
+mvn spring-boot:run -Dspring-boot.run.profiles=ollama
+
+# Run tests
+mvn test
+```
+
+For local Ollama on this machine:
+
+```powershell
+F:\Ollama\ollama.exe serve
+F:\Ollama\ollama.exe run llama3.2:3b
+```
+
+## Interview Prep Highlights
+
+By the end of Module 2, answer these cold:
+
+1. What problem does Spring AI solve compared with raw HTTP?
+2. What is the difference between `ChatClient` and `ChatModel`?
+3. How does Spring Boot auto-configure a `ChatClient.Builder`?
+4. How would you switch from Groq to Ollama without code changes?
+5. When would you choose local Ollama over a hosted provider?
+6. What do temperature and max tokens control?
+7. What should you log for every LLM call?
+8. When would you skip Spring AI?
+
+## Official References
+
+These docs were used while preparing this module. Check them again before implementing code because Spring AI moves quickly.
+
+- Spring AI ChatClient API: `https://docs.spring.io/spring-ai/reference/api/chatclient.html`
+- Spring AI Groq Chat: `https://docs.spring.io/spring-ai/reference/api/chat/groq-chat.html`
+- Spring AI Ollama Chat: `https://docs.spring.io/spring-ai/reference/api/chat/ollama-chat.html`
+
+Ready? Open `01_what_is_spring_ai_and_why_it_exists.md`.

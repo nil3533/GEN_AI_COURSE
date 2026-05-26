@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="450" viewBox="0 0 1000 450" role="img" aria-labelledby="title desc">
+  <title id="title">Guardrail layers</title>
+  <desc id="desc">A layered guardrail model around an LLM system.</desc>
+  <style>.title{font:700 28px Segoe UI,Arial;fill:#0f172a}.h{font:700 16px Segoe UI,Arial;fill:#0f172a}.t{font:400 13px Segoe UI,Arial;fill:#334155}</style>
+  <rect width="1000" height="450" fill="#f8fafc"/><text x="45" y="50" class="title">Guardrails Are Layers, Not One Prompt</text>
+  <rect x="140" y="95" width="720" height="300" rx="16" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="500" y="125" text-anchor="middle" class="h">Input validation</text>
+  <rect x="185" y="140" width="630" height="230" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="500" y="170" text-anchor="middle" class="h">Authentication and authorization</text>
+  <rect x="230" y="185" width="540" height="160" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/><text x="500" y="215" text-anchor="middle" class="h">Prompt construction and redaction</text>
+  <rect x="280" y="235" width="440" height="85" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="500" y="268" text-anchor="middle" class="h">LLM call</text><text x="500" y="292" text-anchor="middle" class="t">then output validation, review, audit logs</text>
+</svg>
+

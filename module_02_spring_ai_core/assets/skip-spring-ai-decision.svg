@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520" role="img" aria-labelledby="title desc">
+  <title id="title">When to skip Spring AI decision flow</title>
+  <desc id="desc">A decision flow showing when Spring AI is a good fit and when raw HTTP, provider SDKs, or another framework may be better.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="1120" height="520" rx="22" fill="#ffffff"/>
+  <text x="60" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="31" font-weight="700" fill="#0f172a">Should This Use Spring AI?</text>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="80" y="160" width="250" height="92" rx="16" fill="#e0f2fe" stroke="#0284c7"/>
+    <text x="205" y="196" text-anchor="middle" font-size="19" font-weight="700" fill="#075985">Spring Boot app?</text>
+    <text x="205" y="224" text-anchor="middle" font-size="16" fill="#0f172a">Java service boundary</text>
+    <rect x="430" y="160" width="250" height="92" rx="16" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="555" y="196" text-anchor="middle" font-size="19" font-weight="700" fill="#166534">Need portability?</text>
+    <text x="555" y="224" text-anchor="middle" font-size="16" fill="#0f172a">providers may change</text>
+    <rect x="780" y="160" width="250" height="92" rx="16" fill="#fef3c7" stroke="#d97706"/>
+    <text x="905" y="196" text-anchor="middle" font-size="19" font-weight="700" fill="#92400e">Use Spring AI</text>
+    <text x="905" y="224" text-anchor="middle" font-size="16" fill="#0f172a">ChatClient first</text>
+    <rect x="250" y="340" width="250" height="92" rx="16" fill="#ffe4e6" stroke="#e11d48"/>
+    <text x="375" y="376" text-anchor="middle" font-size="19" font-weight="700" fill="#9f1239">Need custom API?</text>
+    <text x="375" y="404" text-anchor="middle" font-size="16" fill="#0f172a">raw HTTP or SDK</text>
+    <rect x="620" y="340" width="250" height="92" rx="16" fill="#ede9fe" stroke="#7c3aed"/>
+    <text x="745" y="376" text-anchor="middle" font-size="19" font-weight="700" fill="#5b21b6">Complex agent graph?</text>
+    <text x="745" y="404" text-anchor="middle" font-size="16" fill="#0f172a">compare frameworks</text>
+    <line x1="330" y1="206" x2="428" y2="206" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <line x1="680" y1="206" x2="778" y2="206" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M555 252 C555 304 375 300 375 338" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M905 252 C905 314 745 302 745 338" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  </g>
+</svg>

@@ -1,0 +1,57 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.iml
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+
+# Logs and runtime output
+*.log
+logs/
+*.out
+*.err
+
+# Maven / Java build output
+target/
+**/target/
+.mvn/wrapper/maven-wrapper.jar
+hs_err_pid*
+replay_pid*
+
+# Gradle, if used later
+.gradle/
+build/
+**/build/
+
+# Node / React / Vite output
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.vite/
+coverage/
+**/coverage/
+
+# Docker and local data volumes
+docker-data/
+data/
+tmp/
+temp/
+
+# Generated course artifacts
+deployment-reports/
+*.tmp
+
+# Local tool caches
+.cache/
+.codex/

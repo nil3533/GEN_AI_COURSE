@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: m01-first-llm-call
+
+groq:
+  base-url: https://api.groq.com/openai/v1
+  api-key: ${GROQ_API_KEY:}
+  model: llama-3.3-70b-versatile
+  timeout-seconds: 30
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics

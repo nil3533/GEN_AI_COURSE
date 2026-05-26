@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Spring Boot to Groq Architecture Overview</title>
+  <desc id="desc">Postman or curl calls Spring Boot, which validates the request, calls Groq with RestClient, and returns JSON.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 30px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px Segoe UI, Arial, sans-serif; fill: #475569; }
+      .box-title { font: 700 18px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .box-text { font: 400 14px Segoe UI, Arial, sans-serif; fill: #334155; }
+      .small { font: 600 13px Segoe UI, Arial, sans-serif; fill: #334155; }
+      .line { stroke: #334155; stroke-width: 2.4; fill: none; marker-end: url(#arrow); }
+      .soft-line { stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 7 7; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="520" fill="#f8fafc"/>
+  <text x="60" y="52" class="title">Mini-Project 1: Raw LLM Call from Spring Boot</text>
+  <text x="60" y="82" class="subtitle">No Spring AI yet. The app uses normal HTTP through RestClient to call Groq.</text>
+
+  <rect x="55" y="145" width="150" height="105" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="130" y="178" text-anchor="middle" class="box-title">Client</text>
+  <text x="130" y="205" text-anchor="middle" class="box-text">Postman</text>
+  <text x="130" y="226" text-anchor="middle" class="box-text">or curl</text>
+
+  <rect x="275" y="145" width="155" height="105" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="352" y="176" text-anchor="middle" class="box-title">Controller</text>
+  <text x="352" y="204" text-anchor="middle" class="box-text">AskController</text>
+  <text x="352" y="225" text-anchor="middle" class="box-text">POST /ask</text>
+
+  <rect x="500" y="145" width="155" height="105" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="577" y="176" text-anchor="middle" class="box-title">Service</text>
+  <text x="577" y="204" text-anchor="middle" class="box-text">LlmService</text>
+  <text x="577" y="225" text-anchor="middle" class="box-text">builds JSON</text>
+
+  <rect x="725" y="145" width="155" height="105" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="802" y="176" text-anchor="middle" class="box-title">HTTP Client</text>
+  <text x="802" y="204" text-anchor="middle" class="box-text">RestClient</text>
+  <text x="802" y="225" text-anchor="middle" class="box-text">Bearer auth</text>
+
+  <rect x="950" y="145" width="170" height="105" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="1035" y="176" text-anchor="middle" class="box-title">Groq API</text>
+  <text x="1035" y="204" text-anchor="middle" class="box-text">chat completions</text>
+  <text x="1035" y="225" text-anchor="middle" class="box-text">runs model</text>
+
+  <path d="M 205 197 L 275 197" class="line"/>
+  <path d="M 430 197 L 500 197" class="line"/>
+  <path d="M 655 197 L 725 197" class="line"/>
+  <path d="M 880 197 L 950 197" class="line"/>
+
+  <text x="240" y="185" text-anchor="middle" class="small">JSON</text>
+  <text x="465" y="185" text-anchor="middle" class="small">question</text>
+  <text x="690" y="185" text-anchor="middle" class="small">request body</text>
+  <text x="915" y="185" text-anchor="middle" class="small">HTTPS</text>
+
+  <path d="M 950 263 C 820 340 360 340 205 263" class="line"/>
+  <text x="578" y="360" text-anchor="middle" class="small">answer + promptTokens + completionTokens + latencyMs</text>
+
+  <rect x="290" y="405" width="245" height="70" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="412" y="433" text-anchor="middle" class="box-title">application.yml</text>
+  <text x="412" y="456" text-anchor="middle" class="box-text">base URL, model, timeout</text>
+
+  <rect x="665" y="405" width="245" height="70" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+  <text x="787" y="433" text-anchor="middle" class="box-title">Environment</text>
+  <text x="787" y="456" text-anchor="middle" class="box-text">GROQ_API_KEY</text>
+
+  <path d="M 665 440 L 535 440" class="soft-line"/>
+  <path d="M 412 405 L 552 250" class="soft-line"/>
+</svg>
+

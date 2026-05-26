@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="430" viewBox="0 0 1120 430" role="img" aria-labelledby="title desc">
+  <title id="title">Java LLM API flow</title>
+  <desc id="desc">User posts to Spring controller, LlmService builds request, Groq returns choices and usage, and the controller returns JSON.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#334155"/></marker><style>.title{font:700 28px Segoe UI,Arial;fill:#0f172a}.h{font:700 15px Segoe UI,Arial;fill:#0f172a}.t{font:400 12px Segoe UI,Arial;fill:#334155}.line{stroke:#334155;stroke-width:2.2;fill:none;marker-end:url(#arrow)}</style></defs>
+  <rect width="1120" height="430" fill="#f8fafc"/><text x="45" y="50" class="title">Calling an LLM from Java</text>
+  <rect x="60" y="145" width="145" height="68" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="132" y="173" text-anchor="middle" class="h">User</text><text x="132" y="195" text-anchor="middle" class="t">POST /ask</text>
+  <rect x="270" y="145" width="155" height="68" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="347" y="173" text-anchor="middle" class="h">Controller</text><text x="347" y="195" text-anchor="middle" class="t">validate DTO</text>
+  <rect x="490" y="145" width="155" height="68" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/><text x="567" y="173" text-anchor="middle" class="h">LlmService</text><text x="567" y="195" text-anchor="middle" class="t">build request</text>
+  <rect x="710" y="145" width="145" height="68" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="782" y="173" text-anchor="middle" class="h">RestClient</text><text x="782" y="195" text-anchor="middle" class="t">HTTP POST</text>
+  <rect x="920" y="145" width="145" height="68" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/><text x="992" y="173" text-anchor="middle" class="h">Groq API</text><text x="992" y="195" text-anchor="middle" class="t">model output</text>
+  <path d="M205 179 L270 179" class="line"/><path d="M425 179 L490 179" class="line"/><path d="M645 179 L710 179" class="line"/><path d="M855 179 L920 179" class="line"/>
+  <path d="M920 230 C760 320 360 320 205 230" class="line"/><text x="560" y="338" text-anchor="middle" class="t">AskResponse: answer, promptTokens, completionTokens, latencyMs, model</text>
+</svg>
+
