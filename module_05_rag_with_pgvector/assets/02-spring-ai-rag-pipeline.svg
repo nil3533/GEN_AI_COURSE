@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="390" viewBox="0 0 960 390" role="img" aria-labelledby="title desc">
+  <title id="title">Spring AI RAG service pipeline</title>
+  <desc id="desc">Spring Boot layers for a RAG application from controller to chunker, embedding gateway, vector repository, and answer gateway.</desc>
+  <rect width="960" height="390" fill="#f8fafc"/>
+  <text x="48" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Keep the RAG pipeline explicit first</text>
+  <text x="48" y="80" font-family="Arial, sans-serif" font-size="15" fill="#475569">Each box is a testable Spring component. Replace implementations behind interfaces as the module grows.</text>
+  <g font-family="Arial, sans-serif" font-size="14">
+    <rect x="55" y="132" width="130" height="70" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="120" y="162" font-weight="700" text-anchor="middle" fill="#1e3a8a">Controller</text>
+    <text x="120" y="184" text-anchor="middle" fill="#1e40af">HTTP API</text>
+    <path d="M194 167 H242" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="254" y="132" width="130" height="70" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="319" y="162" font-weight="700" text-anchor="middle" fill="#075985">RagService</text>
+    <text x="319" y="184" text-anchor="middle" fill="#0369a1">orchestrates</text>
+    <path d="M393 167 H441" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="454" y="132" width="130" height="70" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="519" y="162" font-weight="700" text-anchor="middle" fill="#14532d">Chunker</text>
+    <text x="519" y="184" text-anchor="middle" fill="#166534">splits text</text>
+    <path d="M593 167 H641" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="654" y="132" width="130" height="70" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="719" y="162" font-weight="700" text-anchor="middle" fill="#78350f">Embeddings</text>
+    <text x="719" y="184" text-anchor="middle" fill="#92400e">text to vectors</text>
+    <path d="M793 167 H841" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="854" y="132" width="70" height="70" rx="8" fill="#fae8ff" stroke="#a21caf" stroke-width="2"/>
+    <text x="889" y="162" font-weight="700" text-anchor="middle" fill="#701a75">Store</text>
+    <text x="889" y="184" text-anchor="middle" fill="#86198f">vectors</text>
+    <rect x="155" y="264" width="180" height="70" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+    <text x="245" y="294" font-weight="700" text-anchor="middle" fill="#7c2d12">Retrieve top-k</text>
+    <text x="245" y="316" text-anchor="middle" fill="#9a3412">query vector search</text>
+    <path d="M344 299 H465" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="478" y="264" width="180" height="70" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+    <text x="568" y="294" font-weight="700" text-anchor="middle" fill="#0f172a">AnswerGateway</text>
+    <text x="568" y="316" text-anchor="middle" fill="#334155">grounded prompt</text>
+    <path d="M667 299 H788" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="801" y="264" width="110" height="70" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+    <text x="856" y="294" font-weight="700" text-anchor="middle" fill="#164e63">Response</text>
+    <text x="856" y="316" text-anchor="middle" fill="#0e7490">answer + cites</text>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>

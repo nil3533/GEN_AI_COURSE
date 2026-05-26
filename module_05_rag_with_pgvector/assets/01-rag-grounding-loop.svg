@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+  <title id="title">RAG grounding loop</title>
+  <desc id="desc">A question is used to retrieve trusted chunks, then those chunks ground the model answer and citations.</desc>
+  <rect width="960" height="360" fill="#f8fafc"/>
+  <text x="48" y="54" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#0f172a">RAG changes the model from guessing to grounding</text>
+  <text x="48" y="84" font-family="Arial, sans-serif" font-size="15" fill="#475569">The application fetches evidence first, then asks the model to write from that evidence.</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="55" y="135" width="150" height="78" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="130" y="166" font-size="16" font-weight="700" text-anchor="middle" fill="#1e3a8a">Question</text>
+    <text x="130" y="190" font-size="13" text-anchor="middle" fill="#1e40af">User asks</text>
+    <path d="M215 174 H286" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="300" y="124" width="172" height="100" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="386" y="158" font-size="16" font-weight="700" text-anchor="middle" fill="#14532d">Retrieve</text>
+    <text x="386" y="181" font-size="13" text-anchor="middle" fill="#166534">Find top chunks</text>
+    <text x="386" y="201" font-size="13" text-anchor="middle" fill="#166534">from trusted data</text>
+    <path d="M482 174 H553" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="566" y="124" width="172" height="100" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="652" y="158" font-size="16" font-weight="700" text-anchor="middle" fill="#78350f">Prompt Model</text>
+    <text x="652" y="181" font-size="13" text-anchor="middle" fill="#92400e">Question plus</text>
+    <text x="652" y="201" font-size="13" text-anchor="middle" fill="#92400e">evidence chunks</text>
+    <path d="M748 174 H819" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="832" y="135" width="84" height="78" rx="8" fill="#fae8ff" stroke="#a21caf" stroke-width="2"/>
+    <text x="874" y="166" font-size="16" font-weight="700" text-anchor="middle" fill="#701a75">Answer</text>
+    <text x="874" y="190" font-size="13" text-anchor="middle" fill="#86198f">Cited</text>
+    <rect x="240" y="266" width="480" height="48" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="480" y="296" font-size="14" font-weight="700" text-anchor="middle" fill="#0f172a">Key rule: if retrieval does not find evidence, the app should say it does not know.</text>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>

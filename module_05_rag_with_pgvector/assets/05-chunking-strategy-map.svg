@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="390" viewBox="0 0 960 390" role="img" aria-labelledby="title desc">
+  <title id="title">Chunking strategy map</title>
+  <desc id="desc">Chunk size and overlap control precision, context, cost, and retrieval quality.</desc>
+  <rect width="960" height="390" fill="#f8fafc"/>
+  <text x="48" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Chunking decides what the retriever can see</text>
+  <text x="48" y="80" font-family="Arial, sans-serif" font-size="15" fill="#475569">A chunk is the unit of retrieval. If the answer is split badly, the model receives weak evidence.</text>
+  <g font-family="Arial, sans-serif">
+    <line x1="140" y1="292" x2="820" y2="292" stroke="#64748b" stroke-width="3"/>
+    <line x1="140" y1="292" x2="140" y2="125" stroke="#64748b" stroke-width="3"/>
+    <text x="470" y="333" font-size="15" font-weight="700" text-anchor="middle" fill="#334155">Chunk size</text>
+    <text x="72" y="210" font-size="15" font-weight="700" text-anchor="middle" fill="#334155" transform="rotate(-90 72 210)">Context</text>
+    <circle cx="245" cy="252" r="48" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="245" y="247" font-size="15" font-weight="700" text-anchor="middle" fill="#1e3a8a">Small</text>
+    <text x="245" y="268" font-size="12" text-anchor="middle" fill="#1e40af">precise</text>
+    <circle cx="490" cy="190" r="55" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="490" y="184" font-size="15" font-weight="700" text-anchor="middle" fill="#14532d">Balanced</text>
+    <text x="490" y="206" font-size="12" text-anchor="middle" fill="#166534">start here</text>
+    <circle cx="730" cy="145" r="58" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="730" y="139" font-size="15" font-weight="700" text-anchor="middle" fill="#78350f">Large</text>
+    <text x="730" y="161" font-size="12" text-anchor="middle" fill="#92400e">more noise</text>
+    <rect x="260" y="310" width="460" height="40" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="490" y="335" font-size="13" font-weight="700" text-anchor="middle" fill="#0f172a">Overlap protects ideas that cross chunk boundaries.</text>
+  </g>
+</svg>

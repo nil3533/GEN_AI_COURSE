@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="390" viewBox="0 0 960 390" role="img" aria-labelledby="title desc">
+  <title id="title">Citations and grounding contract</title>
+  <desc id="desc">Retrieved chunks feed a strict answer contract that returns answer text and citations, or an insufficient-information response.</desc>
+  <rect width="960" height="390" fill="#f8fafc"/>
+  <text x="48" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Citations are the user interface for trust</text>
+  <text x="48" y="80" font-family="Arial, sans-serif" font-size="15" fill="#475569">A grounded answer must show what evidence it used, not just sound confident.</text>
+  <g font-family="Arial, sans-serif" font-size="14">
+    <rect x="72" y="128" width="220" height="150" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="182" y="162" font-size="17" font-weight="700" text-anchor="middle" fill="#1e3a8a">Retrieved chunk</text>
+    <text x="182" y="195" text-anchor="middle" fill="#1e40af">documentId</text>
+    <text x="182" y="219" text-anchor="middle" fill="#1e40af">source + title</text>
+    <text x="182" y="243" text-anchor="middle" fill="#1e40af">chunkIndex + score</text>
+    <path d="M304 203 H405" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="420" y="128" width="220" height="150" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="530" y="162" font-size="17" font-weight="700" text-anchor="middle" fill="#14532d">Grounding rule</text>
+    <text x="530" y="195" text-anchor="middle" fill="#166534">answer only from context</text>
+    <text x="530" y="219" text-anchor="middle" fill="#166534">say not enough info</text>
+    <text x="530" y="243" text-anchor="middle" fill="#166534">when evidence is weak</text>
+    <path d="M652 203 H753" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="768" y="128" width="130" height="150" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="833" y="162" font-size="17" font-weight="700" text-anchor="middle" fill="#78350f">Response</text>
+    <text x="833" y="195" text-anchor="middle" fill="#92400e">answer</text>
+    <text x="833" y="219" text-anchor="middle" fill="#92400e">sources</text>
+    <text x="833" y="243" text-anchor="middle" fill="#92400e">scores</text>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>

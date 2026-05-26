@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" role="img" aria-labelledby="title desc">
+  <title id="title">Query rewriting and HyDE</title>
+  <desc id="desc">A vague question can be rewritten or expanded into a hypothetical answer before embedding for retrieval.</desc>
+  <rect width="960" height="400" fill="#f8fafc"/>
+  <text x="48" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Better queries can produce better retrieval</text>
+  <text x="48" y="80" font-family="Arial, sans-serif" font-size="15" fill="#475569">Rewrite only when the original question is too thin, ambiguous, or conversational.</text>
+  <g font-family="Arial, sans-serif" font-size="14">
+    <rect x="68" y="140" width="190" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="163" y="172" font-weight="700" text-anchor="middle" fill="#1e3a8a">User question</text>
+    <text x="163" y="195" text-anchor="middle" fill="#1e40af">"memory?"</text>
+    <path d="M268 180 H335" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="348" y="112" width="240" height="80" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="468" y="145" font-weight="700" text-anchor="middle" fill="#14532d">Query rewrite</text>
+    <text x="468" y="168" text-anchor="middle" fill="#166534">Spring AI chat memory advisor</text>
+    <rect x="348" y="222" width="240" height="80" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="468" y="255" font-weight="700" text-anchor="middle" fill="#78350f">HyDE</text>
+    <text x="468" y="278" text-anchor="middle" fill="#92400e">hypothetical answer text</text>
+    <path d="M598 152 H682" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M598 262 H682" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="696" y="168" width="190" height="86" rx="8" fill="#fae8ff" stroke="#a21caf" stroke-width="2"/>
+    <text x="791" y="202" font-weight="700" text-anchor="middle" fill="#701a75">Embed and search</text>
+    <text x="791" y="226" text-anchor="middle" fill="#86198f">retrieve stronger chunks</text>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>

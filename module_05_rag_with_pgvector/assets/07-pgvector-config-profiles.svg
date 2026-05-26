@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="380" viewBox="0 0 960 380" role="img" aria-labelledby="title desc">
+  <title id="title">Spring profile configuration for RAG</title>
+  <desc id="desc">Default, pgvector, ollama, and groq profiles swap repositories, embeddings, and chat providers.</desc>
+  <rect width="960" height="380" fill="#f8fafc"/>
+  <text x="48" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Profiles let one codebase run in learning and production-like modes</text>
+  <text x="48" y="80" font-family="Arial, sans-serif" font-size="15" fill="#475569">Keep the API stable while changing storage and provider implementations.</text>
+  <g font-family="Arial, sans-serif" font-size="14">
+    <rect x="70" y="126" width="185" height="150" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="162" y="158" font-weight="700" text-anchor="middle" fill="#1e3a8a">default</text>
+    <text x="162" y="190" text-anchor="middle" fill="#1e40af">memory store</text>
+    <text x="162" y="214" text-anchor="middle" fill="#1e40af">hash embeddings</text>
+    <text x="162" y="238" text-anchor="middle" fill="#1e40af">template answer</text>
+    <rect x="285" y="126" width="185" height="150" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="377" y="158" font-weight="700" text-anchor="middle" fill="#14532d">pgvector</text>
+    <text x="377" y="190" text-anchor="middle" fill="#166534">PostgreSQL</text>
+    <text x="377" y="214" text-anchor="middle" fill="#166534">vector table</text>
+    <text x="377" y="238" text-anchor="middle" fill="#166534">similarity search</text>
+    <rect x="500" y="126" width="185" height="150" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="592" y="158" font-weight="700" text-anchor="middle" fill="#78350f">ollama</text>
+    <text x="592" y="190" text-anchor="middle" fill="#92400e">local embeddings</text>
+    <text x="592" y="214" text-anchor="middle" fill="#92400e">local chat model</text>
+    <text x="592" y="238" text-anchor="middle" fill="#92400e">no hosted key</text>
+    <rect x="715" y="126" width="175" height="150" rx="8" fill="#fae8ff" stroke="#a21caf" stroke-width="2"/>
+    <text x="802" y="158" font-weight="700" text-anchor="middle" fill="#701a75">groq</text>
+    <text x="802" y="190" text-anchor="middle" fill="#86198f">hosted chat</text>
+    <text x="802" y="214" text-anchor="middle" fill="#86198f">OpenAI compatible</text>
+    <text x="802" y="238" text-anchor="middle" fill="#86198f">requires key</text>
+  </g>
+</svg>

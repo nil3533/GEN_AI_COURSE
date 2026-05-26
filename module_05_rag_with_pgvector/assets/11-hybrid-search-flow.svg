@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="380" viewBox="0 0 960 380" role="img" aria-labelledby="title desc">
+  <title id="title">Hybrid search flow</title>
+  <desc id="desc">Hybrid search merges semantic vector results with exact keyword results, then ranks the combined candidates.</desc>
+  <rect width="960" height="380" fill="#f8fafc"/>
+  <text x="48" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Hybrid search covers meaning and exact strings</text>
+  <text x="48" y="80" font-family="Arial, sans-serif" font-size="15" fill="#475569">Use it when users ask about identifiers, APIs, error codes, product names, or legal clauses.</text>
+  <g font-family="Arial, sans-serif" font-size="14">
+    <rect x="70" y="150" width="160" height="72" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="150" y="192" font-weight="700" text-anchor="middle" fill="#1e3a8a">Question</text>
+    <path d="M240 186 H312" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="325" y="112" width="190" height="70" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="420" y="153" font-weight="700" text-anchor="middle" fill="#14532d">Vector search</text>
+    <rect x="325" y="222" width="190" height="70" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="420" y="263" font-weight="700" text-anchor="middle" fill="#78350f">Keyword search</text>
+    <path d="M525 147 H606" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M525 257 H606" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="620" y="150" width="150" height="72" rx="8" fill="#fae8ff" stroke="#a21caf" stroke-width="2"/>
+    <text x="695" y="181" font-weight="700" text-anchor="middle" fill="#701a75">Merge</text>
+    <text x="695" y="203" text-anchor="middle" fill="#86198f">dedupe + score</text>
+    <path d="M780 186 H842" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="855" y="150" width="75" height="72" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+    <text x="892" y="181" font-weight="700" text-anchor="middle" fill="#164e63">Top-k</text>
+    <text x="892" y="203" text-anchor="middle" fill="#0e7490">chunks</text>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>

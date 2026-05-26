@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="380" viewBox="0 0 960 380" role="img" aria-labelledby="title desc">
+  <title id="title">QuestionAnswerAdvisor flow</title>
+  <desc id="desc">Explicit RAG keeps retrieval visible, while advisors attach retrieval behavior to ChatClient calls.</desc>
+  <rect width="960" height="380" fill="#f8fafc"/>
+  <text x="48" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Advisors hide plumbing after you understand the plumbing</text>
+  <text x="48" y="80" font-family="Arial, sans-serif" font-size="15" fill="#475569">Use explicit services while learning. Use advisors when the behavior is stable and reused.</text>
+  <g font-family="Arial, sans-serif" font-size="14">
+    <rect x="78" y="132" width="350" height="165" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <text x="253" y="164" font-size="18" font-weight="700" text-anchor="middle" fill="#1e3a8a">Explicit RAG</text>
+    <text x="253" y="200" text-anchor="middle" fill="#334155">RagService retrieves chunks</text>
+    <text x="253" y="226" text-anchor="middle" fill="#334155">AnswerGateway builds prompt</text>
+    <text x="253" y="252" text-anchor="middle" fill="#334155">Controller returns citations</text>
+    <rect x="532" y="132" width="350" height="165" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+    <text x="707" y="164" font-size="18" font-weight="700" text-anchor="middle" fill="#14532d">Advisor RAG</text>
+    <text x="707" y="200" text-anchor="middle" fill="#334155">ChatClient call has an advisor</text>
+    <text x="707" y="226" text-anchor="middle" fill="#334155">Advisor retrieves context</text>
+    <text x="707" y="252" text-anchor="middle" fill="#334155">Prompt is augmented automatically</text>
+  </g>
+</svg>

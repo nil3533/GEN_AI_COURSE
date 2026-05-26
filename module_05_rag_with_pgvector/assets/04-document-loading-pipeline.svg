@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="380" viewBox="0 0 960 380" role="img" aria-labelledby="title desc">
+  <title id="title">Document loading pipeline</title>
+  <desc id="desc">Documents from many formats are normalized, cleaned, tagged with metadata, and then chunked.</desc>
+  <rect width="960" height="380" fill="#f8fafc"/>
+  <text x="48" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Loading is where messy documents become reliable context</text>
+  <text x="48" y="80" font-family="Arial, sans-serif" font-size="15" fill="#475569">Do not think of loading as file reading only. It is extraction, cleanup, metadata, and traceability.</text>
+  <g font-family="Arial, sans-serif" font-size="14">
+    <rect x="60" y="132" width="150" height="90" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="135" y="164" font-weight="700" text-anchor="middle" fill="#1e3a8a">Sources</text>
+    <text x="135" y="188" text-anchor="middle" fill="#1e40af">PDF, HTML, MD</text>
+    <path d="M220 177 H286" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="300" y="132" width="150" height="90" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="375" y="164" font-weight="700" text-anchor="middle" fill="#78350f">Extract</text>
+    <text x="375" y="188" text-anchor="middle" fill="#92400e">text + structure</text>
+    <path d="M460 177 H526" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="540" y="132" width="150" height="90" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="615" y="164" font-weight="700" text-anchor="middle" fill="#14532d">Normalize</text>
+    <text x="615" y="188" text-anchor="middle" fill="#166534">clean text</text>
+    <path d="M700 177 H766" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="780" y="132" width="130" height="90" rx="8" fill="#fae8ff" stroke="#a21caf" stroke-width="2"/>
+    <text x="845" y="164" font-weight="700" text-anchor="middle" fill="#701a75">Metadata</text>
+    <text x="845" y="188" text-anchor="middle" fill="#86198f">source + ids</text>
+    <rect x="230" y="276" width="500" height="48" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="480" y="306" font-size="14" font-weight="700" text-anchor="middle" fill="#0f172a">Bad loading creates bad citations, even if retrieval and prompting are perfect.</text>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>
