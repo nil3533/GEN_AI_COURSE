@@ -22,8 +22,8 @@ spring-ai, spring-boot, java, generative-ai, llm, rag, pgvector, ollama, groq, t
 
 ## Social Preview
 
-- [ ] Export `docs/assets/social-preview.svg` as a PNG.
-- [ ] Upload it in GitHub repository settings under Social preview.
+- [x] Export `docs/assets/social-preview.svg` as `docs/assets/social-preview.png`.
+- [ ] Upload `docs/assets/social-preview.png` in GitHub repository settings under Social preview.
 - [ ] Share the repository link once and verify the preview looks clean.
 
 ## First Public Release

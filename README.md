@@ -230,7 +230,7 @@ Release notes draft: [docs/releases/v0.1.0.md](docs/releases/v0.1.0.md)
 
 ## Social Preview
 
-Use [docs/assets/social-preview.svg](docs/assets/social-preview.svg) as the source artwork for a GitHub social preview image. Export it as PNG before uploading in GitHub repository settings.
+Use [docs/assets/social-preview.png](docs/assets/social-preview.png) as the GitHub social preview image. The editable source is [docs/assets/social-preview.svg](docs/assets/social-preview.svg).
 
 ## Contributing
 
