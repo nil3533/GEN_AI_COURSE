@@ -1,0 +1,17 @@
+name: Markdown link inventory
+
+on:
+  pull_request:
+    paths:
+      - "**/*.md"
+      - "**/*.svg"
+  workflow_dispatch:
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: List markdown and SVG assets
+        run: |
+          find . -name "*.md" -o -name "*.svg" | sort

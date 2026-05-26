@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Spring AI Reference
+    url: https://docs.spring.io/spring-ai/reference/
+    about: Check the official Spring AI docs for API behavior and provider-specific details.

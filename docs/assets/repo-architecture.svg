@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560" role="img" aria-labelledby="title desc">
+  <title id="title">Spring AI GenAI Journey architecture</title>
+  <desc id="desc">A Java and Spring Boot first learning path from foundations through Spring AI mini-projects, RAG, agents, observability, React, and capstone.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 34px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .sub { font: 500 16px Segoe UI, Arial, sans-serif; fill: #475569; }
+      .box { fill: #ffffff; stroke: #2563eb; stroke-width: 2; rx: 10; }
+      .done { fill: #ecfeff; stroke: #0891b2; stroke-width: 2; rx: 10; }
+      .next { fill: #f0fdf4; stroke: #16a34a; stroke-width: 2; rx: 10; }
+      .cap { fill: #fff7ed; stroke: #f97316; stroke-width: 2; rx: 10; }
+      .h { font: 700 16px Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .t { font: 500 12px Segoe UI, Arial, sans-serif; fill: #334155; }
+      .arrow { stroke: #64748b; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1180" height="560"/>
+  <text x="54" y="70" class="title">Spring AI GenAI Journey</text>
+  <text x="56" y="102" class="sub">A Java and Spring Boot-first path from LLM fundamentals to production GenAI systems.</text>
+
+  <rect x="56" y="148" width="210" height="86" class="done"/>
+  <text x="78" y="181" class="h">01 Foundations</text>
+  <text x="78" y="207" class="t">Raw RestClient LLM call</text>
+  <text x="78" y="225" class="t">Tokens, safety, HTTP shape</text>
+
+  <path d="M268 191 H318" class="arrow"/>
+
+  <rect x="328" y="148" width="210" height="86" class="done"/>
+  <text x="350" y="181" class="h">02 Spring AI Core</text>
+  <text x="350" y="207" class="t">ChatClient and profiles</text>
+  <text x="350" y="225" class="t">Groq and Ollama switching</text>
+
+  <path d="M540 191 H590" class="arrow"/>
+
+  <rect x="600" y="148" width="210" height="86" class="done"/>
+  <text x="622" y="181" class="h">03 Streaming</text>
+  <text x="622" y="207" class="t">SSE chat API</text>
+  <text x="622" y="225" class="t">Manual short history</text>
+
+  <path d="M812 191 H862" class="arrow"/>
+
+  <rect x="872" y="148" width="210" height="86" class="done"/>
+  <text x="894" y="181" class="h">04 Tools</text>
+  <text x="894" y="207" class="t">Structured output</text>
+  <text x="894" y="225" class="t">@Tool backend calls</text>
+
+  <path d="M977 236 V288" class="arrow"/>
+
+  <rect x="872" y="300" width="210" height="86" class="next"/>
+  <text x="894" y="333" class="h">05 RAG</text>
+  <text x="894" y="359" class="t">PostgreSQL + pgvector</text>
+  <text x="894" y="377" class="t">Chat with documents</text>
+
+  <path d="M870 343 H820" class="arrow"/>
+
+  <rect x="600" y="300" width="210" height="86" class="box"/>
+  <text x="622" y="333" class="h">06-09 Production</text>
+  <text x="622" y="359" class="t">Memory, agents, workflows</text>
+  <text x="622" y="377" class="t">Observability and resilience</text>
+
+  <path d="M598 343 H548" class="arrow"/>
+
+  <rect x="328" y="300" width="210" height="86" class="box"/>
+  <text x="350" y="333" class="h">10-12 Portfolio</text>
+  <text x="350" y="359" class="t">React frontend</text>
+  <text x="350" y="377" class="t">Dev productivity and career</text>
+
+  <path d="M326 343 H276" class="arrow"/>
+
+  <rect x="56" y="300" width="210" height="86" class="cap"/>
+  <text x="78" y="333" class="h">13 Capstone</text>
+  <text x="78" y="359" class="t">Spring Boot migration</text>
+  <text x="78" y="377" class="t">RAG + tools + agents</text>
+
+  <rect x="156" y="446" width="868" height="58" class="box"/>
+  <text x="188" y="481" class="h">Every module: concise docs + infographic + runnable Spring Boot mini-project + deterministic tests</text>
+</svg>
